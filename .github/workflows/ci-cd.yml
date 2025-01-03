@@ -24,10 +24,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Rodar Prettier para formatar o código
+      # 4. Corrigir permissões do Prettier (se necessário)
+      - name: Fix permissions
+        run: chmod +x ./node_modules/.bin/prettier
+
+      # 5. Rodar Prettier para formatar o código
       - name: Run Prettier
         run: npm run format
 
-      # 5. Fazer build do projeto
+      # 6. Fazer build do projeto
       - name: Build project
         run: npm run build
