@@ -1,0 +1,40 @@
+name: CI/CD Workflow
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout do repositório
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # 2. Configurar Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      # 3. Instalar dependências
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Rodar Prettier para formatar o código
+      - name: Run Prettier
+        run: npm run format
+
+      # 5. Fazer build do projeto (caso haja um comando build)
+      - name: Build project
+        run: npm run build
+
+      # 6. Deploy para o Netlify (exemplo)
+      - name: Deploy to Netlify
+        uses: netlify/actions@v2.0.1
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
