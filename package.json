@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node server.js",
     "dev": "vite",
-    "build": "vite build",
+    "build": "node ./node_modules/.bin/vite build",
     "format": "npx prettier --write .",
     "test": "jest"
   },

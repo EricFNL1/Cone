@@ -24,9 +24,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Corrigir permissões do Prettier (se necessário)
+      # 4. Garantir permissões para os binários (se necessário)
       - name: Fix permissions
-        run: chmod +x ./node_modules/.bin/prettier
+        run: chmod +x ./node_modules/.bin/*
 
       # 5. Rodar Prettier para formatar o código
       - name: Run Prettier
