@@ -6,6 +6,7 @@ module.exports = {
         colors: {
           primary: "#FFD700", // Amarelo
           background: "#121212", // Preto
+          accent: "#1E90FF", // Azul
         },
       },
     },
