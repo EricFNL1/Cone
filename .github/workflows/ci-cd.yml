@@ -1,4 +1,4 @@
-name: CI/CD Workflow
+name: CI Workflow
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-deploy:
+  build-and-lint:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,17 +24,14 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Rodar Prettier para formatar o código
+      # 4. Rodar ESLint para checar o código
+      - name: Run ESLint
+        run: npm run lint
+
+      # 5. Rodar Prettier para formatar o código
       - name: Run Prettier
         run: npm run format
 
-      # 5. Fazer build do projeto (caso haja um comando build)
+      # 6. Fazer o build do projeto
       - name: Build project
         run: npm run build
-
-      # 6. Deploy para o Netlify (exemplo)
-      - name: Deploy to Netlify
-        uses: netlify/actions@v2.0.1
-        with:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
