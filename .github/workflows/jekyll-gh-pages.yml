@@ -38,11 +38,15 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Build do projeto com Vite
+      # 4. Corrigir permissões do Vite
+      - name: Fix permissions for Node.js binaries
+        run: chmod +x ./node_modules/.bin/vite
+
+      # 5. Build do projeto com Vite
       - name: Build project
         run: npm run build
 
-      # 5. Fazer upload do build como artifact para o job de deploy
+      # 6. Fazer upload do build como artifact para o job de deploy
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
