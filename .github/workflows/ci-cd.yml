@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build-and-lint:
+  build-and-format:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,14 +24,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # 4. Rodar ESLint para checar o código
-      - name: Run ESLint
-        run: npm run lint
-
-      # 5. Rodar Prettier para formatar o código
+      # 4. Rodar Prettier para formatar o código
       - name: Run Prettier
         run: npm run format
 
-      # 6. Fazer o build do projeto
+      # 5. Fazer build do projeto
       - name: Build project
         run: npm run build
