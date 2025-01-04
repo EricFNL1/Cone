@@ -8,7 +8,7 @@ export default defineConfig({
       output: {
         entryFileNames: 'assets/[name].js', // Nome dos arquivos JS
         chunkFileNames: 'assets/[name].js', // Nome dos arquivos de chunks
-        assetFileNames: 'assets/styles.css', // Define o nome fixo para o CSS gerado
+        assetFileNames: 'styles.css', // Coloca o CSS diretamente na pasta dist
       },
     },
   },
