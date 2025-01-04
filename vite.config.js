@@ -2,6 +2,7 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   root: './src', // Define a pasta raiz como 'src'
+  base: './', // Garante que o CSS seja referenciado de forma relativa
   build: {
     outDir: '../dist', // Define a pasta de saída para 'dist'
     rollupOptions: {
