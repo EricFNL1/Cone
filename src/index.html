@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços de Eletricista</title>
   
-  <!-- Carregando o Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Carregando o Tailwind CSS após o Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/dist/styles.css">
+<link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
 
-  <!-- Carregando o Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/dist/styles.css">
   
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
@@ -20,36 +20,36 @@
   <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold">Eletricista Profissional</h1>
-
       <nav>
-        <!-- Botão de menu hambúrguer para telas pequenas -->
-        <button class="lg:hidden text-3xl text-black" id="hamburger-btn">
+        <!-- Menu hambúrguer -->
+        <input type="checkbox" id="hamburger-checkbox" class="hidden">
+        <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer">
           <i class="fas fa-bars"></i>
-        </button>
-        
-        <!-- Menu original (para telas grandes) -->
-        <ul id="menu-desktop" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row transition-all duration-300 ease-in-out z-10">
+        </label>
+
+        <!-- Menu (visível apenas em telas grandes) -->
+        <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
           <li><a href="#services" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Serviços</a></li>
           <li><a href="#about" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
           <li><a href="#testimonials" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Depoimentos</a></li>
           <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
         </ul>
-
-        <!-- Menu hambúrguer para telas pequenas -->
-        <div id="menu-mobile" class="absolute top-0 left-0 w-4/5 md:w-3/5 h-full bg-primary text-white p-4 hidden">
-          <ul class="space-y-4">
-            <li><a href="#services" class="hover:text-accent p-2 transition duration-300 ease-in-out">Serviços</a></li>
-            <li><a href="#about" class="hover:text-accent p-2 transition duration-300 ease-in-out">Sobre</a></li>
-            <li><a href="#testimonials" class="hover:text-accent p-2 transition duration-300 ease-in-out">Depoimentos</a></li>
-            <li><a href="#contact" class="hover:text-accent p-2 transition duration-300 ease-in-out">Contato</a></li>
-          </ul>
-        </div>
-        
-        <!-- Fundo escuro que aparecerá ao abrir o menu -->
-        <div id="overlay" class="fixed inset-0 bg-gray-900 bg-opacity-70 hidden"></div>
       </nav>
     </div>
   </header>
+
+  <!-- Menu Pop-up (oculto inicialmente) -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <ul>
+      <li><a href="#services" class="block p-4">Serviços</a></li>
+      <li><a href="#about" class="block p-4">Sobre</a></li>
+      <li><a href="#testimonials" class="block p-4">Depoimentos</a></li>
+      <li><a href="#contact" class="block p-4">Contato</a></li>
+    </ul>
+  </div>
+
+
+
   <!-- Hero Section -->
   <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('img/fundo-sky_1122-2799.png');">
     <div class="text-center max-w-2xl mx-auto">
@@ -124,19 +124,16 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
   <script>
-    const hamburgerBtn = document.getElementById("hamburger-btn");
-    const menuMobile = document.getElementById("menu-mobile");
-    const overlay = document.getElementById("overlay");
+    // Gerencia a exibição do menu pop-up
+    const hamburgerCheckbox = document.getElementById("hamburger-checkbox");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    hamburgerBtn.addEventListener("click", () => {
-      menuMobile.classList.toggle("hidden"); // Mostrar/ocultar o menu
-      overlay.classList.toggle("hidden"); // Mostrar/ocultar o fundo escuro
-    });
-
-    // Fechar o menu ao clicar no fundo escuro
-    overlay.addEventListener("click", () => {
-      menuMobile.classList.add("hidden");
-      overlay.classList.add("hidden");
+    hamburgerCheckbox.addEventListener("change", () => {
+      if (hamburgerCheckbox.checked) {
+        mobileMenu.style.transform = "translateX(0)";
+      } else {
+        mobileMenu.style.transform = "translateX(-100%)";
+      }
     });
   </script>
 
