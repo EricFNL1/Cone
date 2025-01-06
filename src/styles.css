@@ -6,12 +6,50 @@
 
 /* Estilos personalizados */
 /* Você pode adicionar seus estilos personalizados aqui, mantendo o Tailwind como base */
+/* Tema escuro (padrão) */
 body {
     font-family: 'Arial', sans-serif;
     background-color: #131212;
-}
-
+    color: #ffffff;
+  }
+  
+  /* Tema claro */
+  body.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  body.light-theme header {
+    background-color: #f8f9fa;
+    color: #000000;
+  }
+  
+  body.light-theme .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  
+  body.light-theme .bg-warning {
+    background-color: #ffc107;
+    color: #000000;
+  }
+  
+  body.light-theme .bg-accent {
+    background-color: #e9ecef;
+    color: #000000;
+  }
+  
 .btn-primary {
     background-color: #3490dc;
     color: white;
 }
+
+#theme-toggle {
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  #theme-toggle:hover {
+    transform: scale(1.1);
+    color: #ffbf00; /* Amarelo para realçar ao passar o mouse */
+  }
+  
