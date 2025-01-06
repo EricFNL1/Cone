@@ -43,3 +43,9 @@
 label {
     cursor: pointer;
 }
+
+/* Texto preto*/
+
+.texto{
+    color: black;
+}
