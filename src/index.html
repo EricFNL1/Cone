@@ -35,6 +35,10 @@
           <li><a href="#about" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
           <li><a href="#testimonials" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Depoimentos</a></li>
           <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
+          <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
+            <i id="theme-icon" class="fas fa-moon text-2xl"></i> <!-- Ícone padrão (lua) -->
+          </button>
+        </nav>
         </ul>
       </nav>
     </div>
@@ -47,6 +51,9 @@
       <li><a href="#about" class="block p-4">Sobre</a></li>
       <li><a href="#testimonials" class="block p-4">Depoimentos</a></li>
       <li><a href="#contact" class="block p-4">Contato</a></li>
+      <button id="theme-toggle" class="bg-transparent text-black p-2 rounded-lg">
+        <i id="theme-icon" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+      </button>
     </ul>
   </div>
 
@@ -160,6 +167,34 @@
       }
     });
   </script>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  // Checar se há uma preferência salva no localStorage
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    // Alterar o ícone e salvar a preferência no localStorage
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+    } else {
+      localStorage.setItem("theme", "dark");
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+    }
+  });
+</script>
+
 
 </body>
 </html>
