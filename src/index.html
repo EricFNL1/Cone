@@ -1,68 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços de Eletricista</title>
   
-  <!-- Carregando o Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Carregando o Tailwind CSS após o Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
 
-  <!-- Carregando o Tailwind CSS -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="/dist/styles.css">
   
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
-  <header class="bg-primary text-black sticky top-0 z-50 shadow-md">
-    <div class="container mx-auto flex justify-between items-center p-4 relative z-10">
-      <h1 class="text-xl font-bold z-20">Eletricista Profissional</h1>
-
+  <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <h1 class="text-xl font-bold"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></h1>
       <nav>
-        <!-- Botão de menu hambúrguer para telas pequenas -->
-        <button class="lg:hidden text-3xl text-black" id="hamburger-btn">
+        <!-- Menu hambúrguer -->
+        <input type="checkbox" id="hamburger-checkbox" class="hidden">
+        <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer">
           <i class="fas fa-bars"></i>
-        </button>
-        
-        <!-- Menu original (para telas grandes) -->
-        <ul id="menu-desktop" class="lg:flex hidden space-x-4 bg-primary p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row transition-all duration-300 ease-in-out z-10">
-          <li><a href="#services" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Serviços</a></li>
-          <li><a href="#about" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
-          <li><a href="#testimonials" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Depoimentos</a></li>
-          <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
-          <!-- Dropdown para mobile -->
-          <li class="relative lg:hidden">
-            <button class="bg-primary text-black p-2 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
-              Mais
-            </button>
-            <ul class="absolute hidden bg-white text-black shadow-md rounded-md mt-2 transition-all duration-300 ease-in-out group-hover:block">
-              <li><a href="#faq" class="block p-2 hover:bg-gray-200">FAQ</a></li>
-              <li><a href="#blog" class="block p-2 hover:bg-gray-200">Blog</a></li>
-            </ul>
-          </li>
-        </ul>
+        </label>
 
-        <!-- Menu hambúrguer para telas pequenas -->
-        <ul id="menu-mobile" class="lg:hidden hidden space-y-4 bg-primary p-2 rounded-lg transition-all duration-300 ease-in-out z-10 absolute top-0 left-0 w-full h-full bg-opacity-95">
+        <!-- Menu (visível apenas em telas grandes) -->
+        <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
           <li><a href="#services" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Serviços</a></li>
           <li><a href="#about" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
           <li><a href="#testimonials" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Depoimentos</a></li>
           <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
-          <li><a href="#more" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Mais</a></li>
+          <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
+            <i id="theme-icon" class="fas fa-moon text-2xl"></i> <!-- Ícone padrão (lua) -->
+          </button>
         </ul>
       </nav>
     </div>
   </header>
+
+  <!-- Menu Pop-up (oculto inicialmente) -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <ul>
+      <li><a href="#services" class="block p-4">Serviços</a></li>
+      <li><a href="#about" class="block p-4">Sobre</a></li>
+      <li><a href="#testimonials" class="block p-4">Depoimentos</a></li>
+      <li><a href="#contact" class="block p-4">Contato</a></li>
+      <button id="theme-toggle" class="bg-transparent text-black p-2 rounded-lg">
+        <i id="theme-icon" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+      </button>
+    </ul>
+  </div>
+
+
 
   <!-- Hero Section -->
   <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('img/fundo-sky_1122-2799.png');">
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="text-3xl font-semibold text-white">Precisando de um Eletricista de Confiança?</h2>
       <p class="text-lg text-white mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa.</p>
-      <button class="bg-primary text-white px-4 py-2 mt-4">Solicitar Orçamento</button>
+      <a href="https://wa.me/+5519981690796"><button class="bg-primary text-white px-4 py-2 mt-4">Solicitar Orçamento</button></a>
     </div>
   </section>
 
@@ -89,11 +90,32 @@
           <p class="mt-4">Transforme sua casa com tecnologia inteligente.</p>
         </div>
       </div>
+      <div id="carouselExample" class="carousel slide container mt-5">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="img/carrosel1.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carrosel2.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carrosel3.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
     </div>
   </section>
 
   <!-- About Section -->
-  <section id="about" class="bg-primary text-black py-16">
+  <section id="about" class="bg-warning text-black py-16">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
       <p class="text-center max-w-2xl mx-auto">Com anos de experiência, oferecemos serviços elétricos de alta qualidade, focados na segurança e satisfação dos nossos clientes.</p>
@@ -118,7 +140,8 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-accent text-black py-16">
+  <section id="contact" class="bg-accent py-16 container">
+    <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
     <form class="max-w-lg mx-auto space-y-4">
       <input type="text" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded" />
       <input type="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded" />
@@ -127,19 +150,72 @@
     </form>
   </section>
 
+  <!-- Footer Section -->
+<footer class="bg-black text-white py-8 mt-16">
+  <div class="container mx-auto text-center">
+      <div class="mb-4">
+          <p class="text-lg">Entre em Contato</p>
+          <p class="text-sm">Email: contato@exemplo.com | Telefone: (11) 1234-5678</p>
+      </div>
+      
+      <!-- Redes Sociais -->
+      <div class="space-x-4">
+          <a href="https://facebook.com" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://twitter.com" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter-square"></i></a>
+          <a href="https://instagram.com" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram-square"></i></a>
+      </div>
+      
+      <!-- Copyright -->
+      <div class="mt-6">
+          <p class="text-sm">&copy; 2025 Eletricista Profissional. Todos os direitos reservados.</p>
+      </div>
+  </div>
+</footer>
+
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- Script para alternar o menu no mobile -->
   <script>
-    const hamburgerBtn = document.getElementById("hamburger-btn");
-    const menu = document.getElementById("menu");
+    // Gerencia a exibição do menu pop-up
+    const hamburgerCheckbox = document.getElementById("hamburger-checkbox");
+    const mobileMenu = document.getElementById("mobile-menu");
 
-    hamburgerBtn.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-      menu.classList.toggle("block");
+    hamburgerCheckbox.addEventListener("change", () => {
+      if (hamburgerCheckbox.checked) {
+        mobileMenu.style.transform = "translateX(0)";
+      } else {
+        mobileMenu.style.transform = "translateX(-100%)";
+      }
     });
   </script>
+
+<script>
+  const themeToggle = document.getElementById("theme-toggle");
+  const themeIcon = document.getElementById("theme-icon");
+
+  // Checar se há uma preferência salva no localStorage
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-theme");
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  }
+
+  themeToggle.addEventListener("click", () => {
+    document.body.classList.toggle("light-theme");
+
+    // Alterar o ícone e salvar a preferência no localStorage
+    if (document.body.classList.contains("light-theme")) {
+      localStorage.setItem("theme", "light");
+      themeIcon.classList.remove("fa-moon");
+      themeIcon.classList.add("fa-sun");
+    } else {
+      localStorage.setItem("theme", "dark");
+      themeIcon.classList.remove("fa-sun");
+      themeIcon.classList.add("fa-moon");
+    }
+  });
+</script>
+
 
 </body>
 </html>
