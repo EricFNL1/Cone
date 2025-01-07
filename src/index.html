@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
   <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
@@ -155,19 +155,18 @@
   <div class="container mx-auto text-center">
       <div class="mb-4">
           <p class="text-lg">Entre em Contato</p>
-          <p class="text-sm">Email: contato@exemplo.com | Telefone: (11) 1234-5678</p>
+          <p class="text-sm">Email: contato@celetrica.com.br | Telefone: (19) 99999-9999</p>
       </div>
       
       <!-- Redes Sociais -->
       <div class="space-x-4">
-          <a href="https://facebook.com" target="_blank" class="hover:text-blue-500"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://twitter.com" target="_blank" class="hover:text-blue-400"><i class="fab fa-twitter-square"></i></a>
-          <a href="https://instagram.com" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400"><i class="fab fa-whatsapp-square"></i></a>
+          <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram-square"></i></a>
       </div>
       
       <!-- Copyright -->
       <div class="mt-6">
-          <p class="text-sm">&copy; 2025 Eletricista Profissional. Todos os direitos reservados.</p>
+          <p class="text-sm">&copy; 2025 C E. Todos os direitos reservados.</p>
       </div>
   </div>
 </footer>
@@ -190,30 +189,31 @@
   </script>
 
 <script>
-  const themeToggle = document.getElementById("theme-toggle");
-  const themeIcon = document.getElementById("theme-icon");
+const themeToggle = document.getElementById("theme-toggle");
+const themeIcon = document.getElementById("theme-icon");
 
-  // Checar se há uma preferência salva no localStorage
-  if (localStorage.getItem("theme") === "light") {
-    document.body.classList.add("light-theme");
+// Checar se há uma preferência salva no localStorage
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light-theme");
+  themeIcon.classList.remove("fa-moon");
+  themeIcon.classList.add("fa-sun");
+}
+
+themeToggle.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+
+  // Alterar o ícone e salvar a preferência no localStorage
+  if (document.body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+  } else {
+    localStorage.setItem("theme", "dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
   }
+});
 
-  themeToggle.addEventListener("click", () => {
-    document.body.classList.toggle("light-theme");
-
-    // Alterar o ícone e salvar a preferência no localStorage
-    if (document.body.classList.contains("light-theme")) {
-      localStorage.setItem("theme", "light");
-      themeIcon.classList.remove("fa-moon");
-      themeIcon.classList.add("fa-sun");
-    } else {
-      localStorage.setItem("theme", "dark");
-      themeIcon.classList.remove("fa-sun");
-      themeIcon.classList.add("fa-moon");
-    }
-  });
 </script>
 
 
