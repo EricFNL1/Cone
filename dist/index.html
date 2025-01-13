@@ -16,7 +16,7 @@
   
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles6.css">
+  <link rel="stylesheet" href="./styles10.css">
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
@@ -32,14 +32,31 @@
 
         <!-- Menu (visível apenas em telas grandes) -->
         <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
-          <li><a href="#services" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Serviços</a></li>
-          <li><a href="sobrenos.html" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
-          <li><a href="maisservicos.html" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Mais Serviços</a></li>
-          <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
+          <li>
+            <a href="#services" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
+              Serviços
+            </a>
+          </li>
+          <li>
+            <a href="sobrenos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
+              Sobre
+            </a>
+          </li>
+          <li>
+            <a href="maisservicos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
+              Mais Serviços
+            </a>
+          </li>
+          <li>
+            <a href="#contact" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
+              Contato
+            </a>
+          </li>
           <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
             <i id="theme-icon" class="fas fa-moon text-2xl"></i> <!-- Ícone padrão (lua) -->
           </button>
         </ul>
+        
       </nav>
     </div>
   </header>
@@ -51,8 +68,8 @@
       <li><a href="sobrenos.html" class="block p-4">Sobre</a></li>
       <li><a href="maisservicos.html" class="block p-4">Mais Serviços</a></li>
       <li><a href="#contact" class="block p-4">Contato</a></li>
-      <button id="theme-toggle" class="bg-transparent text-black p-2 rounded-lg">
-        <i id="theme-icon" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+      <button id="theme-toggle-mobile" class="bg-transparent text-black p-2 rounded-lg">
+        <i id="theme-icon-mobile" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
       </button>
     </ul>
   </div>
@@ -60,38 +77,41 @@
 
 
   <!-- Hero Section -->
-  <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('./styles5.css');">
+  <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('./styles7.css');">
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="text-3xl font-semibold text-white">Precisando de um Eletricista de Confiança?</h2>
       <p class="text-lg text-white mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa.</p>
-      <a href="https://wa.me/+5519981690796"><button class="bg-primary text-white px-4 py-2 mt-4">Solicitar Orçamento</button></a>
+      <a href="https://wa.me/+5519981690796"><button class="bg-primary text-white px-4 py-2 mt-4 hover:scale-105 transition-transform duration-300 ease-in-out">Solicitar Orçamento</button></a>
     </div>
   </section>
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16">
+  <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
   </a>
 
   <!-- Services Section -->
-  <section id="services" class="py-16">
+  <section id="services" class="py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
           <h3 class="text-xl font-semibold">Instalações Elétricas</h3>
-          <p class="mt-4">Realizamos instalações elétricas completas para sua casa ou empresa.</p>
+          <p class="mt-4">Realizamos instalações elétricas seguras e eficientes, desde a entrada de energia até os circuitos finais, atendendo todas as normas de segurança.</p>
         </div>
+  
+        <!-- Card de Reparos e Manutenções -->
         <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
           <h3 class="text-xl font-semibold">Reparos e Manutenções</h3>
-          <p class="mt-4">Consertamos problemas elétricos com rapidez e eficiência.</p>
+          <p class="mt-4">Oferecemos reparos rápidos e seguros, incluindo troca de disjuntores e reparo de curto-circuitos, restaurando sua rede elétrica com eficiência.</p>
         </div>
+  
         <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold">Automação Residencial</h3>
-          <p class="mt-4">Transforme sua casa com tecnologia inteligente.</p>
+          <h3 class="text-xl font-semibold">Instalações Elétricas Prediais</h3>
+          <p class="mt-4">Instalações elétricas para edifícios comerciais e residenciais, com foco em segurança, funcionalidade e conformidade com as normas.</p>
         </div>
       </div>
-      <div id="carouselExample" class="carousel slide container mt-5">
+      <div id="carouselExample" class="carousel slide container mt-5 carousel-fade">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <img src="./styles2.css" class="d-block w-100" alt="...">
@@ -113,13 +133,14 @@
         </button>
       </div>
     </div>
-    <div class="bg-cover bg-center bg-no-repeat  flex items-center justify-center">
-      <a href="maisservicos.html"><button class="bg-primary text-white px-4 py-2 mt-4">Saiba Mais</button></a>
+    <div class="bg-cover bg-center bg-no-repeat flex items-center justify-center">
+      <a href="maisservicos.html"><button class="bg-primary text-white px-4 py-2 mt-4 hover:scale-105 transition-transform duration-300 ease-in-out">Saiba Mais</button></a>
     </div>
   </section>
+  
 
   <!-- About Section -->
-  <section id="about" class="bg-warning text-black py-16">
+  <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
       <p class="text-center max-w-2xl mx-auto">Com anos de experiência, oferecemos serviços elétricos de alta qualidade, focados na segurança e satisfação dos nossos clientes.</p>
@@ -127,7 +148,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16">
+  <section id="testimonials" class="py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Depoimentos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -195,12 +216,17 @@
 <script>
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+const themeIconMobile = document.getElementById("theme-icon-mobile");
 
 // Checar se há uma preferência salva no localStorage
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-theme");
   themeIcon.classList.remove("fa-moon");
   themeIcon.classList.add("fa-sun");
+
+  themeIconMobile.classList.remove("fa-moon");
+  themeIconMobile.classList.add("fa-sun");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -211,12 +237,40 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
   } else {
     localStorage.setItem("theme", "dark");
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
+
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
   }
 });
+
+themeToggleMobile.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+
+  // Alterar o ícone e salvar a preferência no localStorage
+  if (document.body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
+
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    localStorage.setItem("theme", "dark");
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
+
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  }
+});
+
 
 </script>
 
