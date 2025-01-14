@@ -146,26 +146,56 @@
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16 hero-text">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Depoimentos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Ótimo serviço! Resolveram todos os problemas elétricos da minha casa com eficiência."</p>
-          <h4 class="mt-4 font-semibold">— João Silva</h4>
-        </div>
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Recomendo a todos. Equipe profissional e muito confiável."</p>
-          <h4 class="mt-4 font-semibold">— Maria Oliveira</h4>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Comentários Section -->
+<section id="comments" class="py-16 hero-text">
+  <div class="container mx-auto">
+    <h2 class="text-3xl font-bold text-center mb-8">Comentários</h2>
 
-<!-- Contact Section -->
+    <!-- Comentários existentes (Carrossel de Comentários) -->
+    <div id="commentCarousel" class="carousel slide mb-8" data-bs-ride="carousel">
+      <div class="carousel-inner" id="carousel-comments">
+        <!-- Comentários inseridos aqui -->
+      </div>
+
+      <!-- Controles do Carrossel -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#commentCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bg-gray-800" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#commentCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon bg-gray-800" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Frase de incentivo para deixar comentário -->
+    <div class="text-center mb-4">
+      <p class="text-lg">Deixe seu comentário abaixo!</p>
+    </div>
+
+    <!-- Botão para exibir o formulário de comentário -->
+    <div class="text-center">
+      <button id="show-form-btn" class="bg-gray-800 text-white px-4 py-2 rounded hover:text-primary">
+        Escrever Comentário
+      </button>
+    </div>
+
+    <!-- Formulário de Envio de Comentário (inicialmente oculto) -->
+    <div id="comment-form-container" class="hidden mt-8">
+      <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 text-center">
+        <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required />
+        <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required></textarea>
+        <button type="submit" class="w-full md:w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 mx-auto">
+          Enviar Comentário
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section (sem alterações, voltando ao formato anterior) -->
 <section id="contact" class="bg-accent py-16 container">
-  <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
+  <h2 class="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
@@ -174,11 +204,12 @@
   </form>
 </section>
 
+
   <!-- Footer Section -->
 <footer class="bg-black text-white py-8 mt-16">
   <div class="container mx-auto text-center">
       <div class="mb-4">
-          <p class="text-lg">Entre em Contato</p>
+          <p class="text-lg">Atendimento</p>
           <p class="text-sm">Email: contato@celetrica.com.br | Telefone: (19) 99999-9999</p>
       </div>
       
@@ -270,9 +301,15 @@ themeToggleMobile.addEventListener("click", () => {
   }
 });
 
-
 </script>
 
+<script>
+  document.getElementById("show-form-btn").addEventListener("click", function() {
+  var formContainer = document.getElementById("comment-form-container");
+  formContainer.classList.toggle("hidden");
+});
+
+</script>
 
 </body>
 </html>
