@@ -100,3 +100,15 @@ button{
 html {
   scroll-behavior: smooth;
 }
+
+/* Centralizar conteúdo do comentário */
+.carousel-item .col-md-6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-item .bg-white {
+  max-width: 100%;
+  margin: 0 auto;
+}

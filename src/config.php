@@ -1,15 +1,15 @@
 <?php
-// Arquivo de configuração com credenciais do banco de dados
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'seu_usuario');
-define('DB_PASSWORD', 'sua_senha');
-define('DB_NAME', 'seu_banco_de_dados');
+// Configuração do banco de dados
+$host = 'localhost';     // O servidor do banco de dados (normalmente 'localhost')
+$dbname = 'connecta';    // Nome do banco de dados
+$username = 'root';      // Nome de usuário do MySQL
+$password = 'admin';     // Senha do MySQL
 
-// Conectando-se ao banco de dados
-$conn = new mysqli(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+// Criação da conexão
+$conn = new mysqli($servername, $username, $password, $dbname);
 
-// Verificando a conexão
+// Verificar a conexão
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Conexão falhou: " . $conn->connect_error);
 }
 ?>
