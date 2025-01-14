@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <link rel="icon" type="image/x-icon" href="img/logo.png">
+  <link rel="icon" type="image/x-icon" href="./styles.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços de Eletricista</title>
@@ -9,19 +9,17 @@
 <!-- Carregando o Tailwind CSS após o Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
-<link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
 
-  
+<link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="./styles10.css">
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
   <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></h1>
+      <h1 class="text-xl font-bold"><img src="./styles.css" alt="Eletricista Profissional" width="80px"></h1>
       <nav>
         <!-- Menu hambúrguer -->
         <input type="checkbox" id="hamburger-checkbox" class="hidden">
@@ -31,11 +29,10 @@
 
         <!-- Menu (visível apenas em telas grandes) -->
         <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
-            <li><a href="index.html" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Home</a></li>  
-            <li><a href="#services" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Serviços</a></li>
-            <li><a href="#about" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Sobre</a></li>
-            <li><a href="maisservicos.html" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Mais Serviços</a></li>
-            <li><a href="#contact" class="hover:text-accent transition duration-300 ease-in-out p-2 lg:p-0">Contato</a></li>
+            <li><a href="index.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Home</a></li>
+            <li><a href="#about" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Sobre</a></li>
+            <li><a href="maisservicos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Mais Serviços</a></li>
+            <li><a href="#contact" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Contato</a></li>
             <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
               <i id="theme-icon" class="fas fa-moon text-2xl"></i> <!-- Ícone padrão (lua) -->
             </button>
@@ -61,13 +58,13 @@
 
 
   <!-- WhatsApp Button -->
-  <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16">
+  <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
   </a>
 
   
   <!-- About Section -->
-  <section id="about" class="bg-warning text-black py-16">
+  <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
       <p class="text-center max-w-2xl mx-auto">Com anos de experiência, oferecemos serviços elétricos de alta qualidade, focados na segurança e satisfação dos nossos clientes.</p>
@@ -75,7 +72,7 @@
   </section>
 
   <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16">
+  <section id="testimonials" class="py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Depoimentos</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -92,7 +89,7 @@
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-accent py-16 container">
+  <section id="contact" class="bg-accent py-16 container ">
     <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
     <form class="max-w-lg mx-auto space-y-4">
       <input type="text" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded" />
