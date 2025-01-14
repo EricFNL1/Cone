@@ -4,7 +4,7 @@
   <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serviços de Eletricista Profissional</title>
+  <title>Connecta Elétrica</title>
   <meta name="description" content="Oferecemos serviços elétricos de alta qualidade, como instalações, reparos e manutenção para sua casa ou empresa.">
   <meta name="keywords" content="eletricista, instalações elétricas, reparos, manutenção elétrica, Eletricista em Mogi Mirim">
   <meta name="robots" content="index, follow">
@@ -209,7 +209,7 @@
   </div>
 
 <!-- Botão para exibir o formulário de comentário -->
-<div class="text-center mb-8">
+<div class="text-center mb-8 mt-3">
   <button id="show-form-btn" class="bg-gray-800 text-white px-4 py-2 rounded hover:text-primary">
     Escrever Comentário
   </button>
