@@ -9,7 +9,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         // Adiciona os arquivos HTML manualmente no processo de build
-        main: path.resolve(__dirname, 'src/index.html'),
+        main: path.resolve(__dirname, 'src/index.html'),  // Pode ser HTML ainda
         maisservicos: path.resolve(__dirname, 'src/maisservicos.html'),
         sobrenos: path.resolve(__dirname, 'src/sobrenos.html')
       },
