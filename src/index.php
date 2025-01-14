@@ -4,8 +4,16 @@
   <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Serviços de Eletricista</title>
-  
+  <title>Serviços de Eletricista Profissional</title>
+  <meta name="description" content="Oferecemos serviços elétricos de alta qualidade, como instalações, reparos e manutenção para sua casa ou empresa.">
+  <meta name="keywords" content="eletricista, instalações elétricas, reparos, manutenção elétrica, Eletricista em Mogi Mirim">
+  <meta name="robots" content="index, follow">
+  <meta property="og:title" content="Serviços de Eletricista Profissional">
+  <meta property="og:description" content="Soluções eficientes para suas necessidades elétricas.">
+  <meta property="og:image" content="img/instalacao-eletrica.jpg">
+  <meta property="og:url" content="https://connectaeletrica.com.br">
+  <meta property="og:type" content="website">
+
 <!-- Carregando o Tailwind CSS após o Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
