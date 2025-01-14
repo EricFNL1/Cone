@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <link rel="icon" type="image/x-icon" href="./styles.css">
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços de Eletricista</title>
@@ -9,18 +9,19 @@
 <!-- Carregando o Tailwind CSS após o Bootstrap -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
-
-
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
+<link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
+
+  
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles10.css">
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
   <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold"><img src="./styles.css" alt="Eletricista Profissional" width="80px"></h1>
+      <h1 class="text-xl font-bold"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></h1>
       <nav>
         <!-- Menu hambúrguer -->
         <input type="checkbox" id="hamburger-checkbox" class="hidden">
@@ -30,7 +31,7 @@
 
         <!-- Menu (visível apenas em telas grandes) -->
         <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
-          <li><a href="index.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Home</a></li>
+          <li><a href="index.php" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Home</a></li>
           <li><a href="sobrenos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Sobre</a></li>
           <li><a href="maisservicos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Mais Serviços</a></li>
           <li><a href="#contact" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Contato</a></li>
@@ -45,13 +46,12 @@
   <!-- Menu Pop-up (oculto inicialmente) -->
   <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
     <ul>
-      <li><a href="index.html" class="block p-4">Home</a></li>  
-      <li><a href="#services" class="block p-4">Serviços</a></li>
-      <li><a href="#about" class="block p-4">Sobre</a></li>
+      <li><a href="index.php" class="block p-4">Home</a></li>
+      <li><a href="sobrenos.html" class="block p-4">Sobre</a></li>
       <li><a href="maisservicos.html" class="block p-4">Mais Serviços</a></li>
       <li><a href="#contact" class="block p-4">Contato</a></li>
-      <button id="theme-toggle" class="bg-transparent text-black p-2 rounded-lg">
-        <i id="theme-icon" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+      <button id="theme-toggle-mobile" class="bg-transparent text-black p-2 rounded-lg">
+        <i id="theme-icon-mobile" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
       </button>
     </ul>
   </div>
@@ -111,25 +111,25 @@
         </div>
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./styles2.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel1.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles3.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel2.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles4.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel3.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles5.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel4.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles6.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel5.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles8.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel6.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles9.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel7.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -147,10 +147,10 @@
   <!-- Contact Section -->
   <section id="contact" class="bg-accent py-16 container">
     <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
-    <form class="max-w-lg mx-auto space-y-4">
-      <input type="text" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded" />
-      <input type="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded" />
-      <textarea placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded"></textarea>
+    <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
+      <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
+      <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
+      <textarea name="mensagem" placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded text-black" required></textarea>
       <button type="submit" class="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
     </form>
   </section>
@@ -165,8 +165,8 @@
       
       <!-- Redes Sociais -->
       <div class="space-x-4">
-          <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400"><i class="fab fa-whatsapp-square"></i></a>
-          <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram-square"></i></a>
+        <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400  text-3xl"><i class="fab fa-whatsapp-square"></i></a>
+        <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600  text-3xl"><i class="fab fa-instagram-square"></i></a>
       </div>
       
       <!-- Copyright -->
@@ -196,12 +196,17 @@
 <script>
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+const themeIconMobile = document.getElementById("theme-icon-mobile");
 
 // Checar se há uma preferência salva no localStorage
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-theme");
   themeIcon.classList.remove("fa-moon");
   themeIcon.classList.add("fa-sun");
+
+  themeIconMobile.classList.remove("fa-moon");
+  themeIconMobile.classList.add("fa-sun");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -212,14 +217,43 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
   } else {
     localStorage.setItem("theme", "dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
+  }
+});
+
+themeToggleMobile.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+
+  // Alterar o ícone e salvar a preferência no localStorage
+  if (document.body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
+
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    localStorage.setItem("theme", "dark");
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
+
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
   }
 });
 
+
 </script>
+
 
 
 </body>

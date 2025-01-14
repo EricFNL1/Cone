@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <link rel="icon" type="image/x-icon" href="./styles.css">
+  <link rel="icon" type="image/x-icon" href="img/logo.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Serviços de Eletricista</title>
@@ -10,19 +10,18 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
-
+<link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
 
   
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="./styles10.css">
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
   <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold"><img src="./styles.css" alt="Eletricista Profissional" width="80px"></h1>
+      <h1 class="text-xl font-bold"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></h1>
       <nav>
         <!-- Menu hambúrguer -->
         <input type="checkbox" id="hamburger-checkbox" class="hidden">
@@ -77,7 +76,7 @@
 
 
   <!-- Hero Section -->
-  <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('./styles7.css');">
+  <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center" style="background-image: url('img/fundofinal.png');">
     <div class="text-center max-w-2xl mx-auto">
       <h2 class="text-3xl font-semibold text-white">Precisando de um Eletricista de Confiança?</h2>
       <p class="text-lg text-white mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa.</p>
@@ -114,13 +113,13 @@
       <div id="carouselExample" class="carousel slide container mt-5 carousel-fade">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="./styles2.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel1.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles3.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel2.jpg" class="d-block w-100" alt="...">
           </div>
           <div class="carousel-item">
-            <img src="./styles4.css" class="d-block w-100" alt="...">
+            <img src="img/carrosel3.jpg" class="d-block w-100" alt="...">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -143,50 +142,109 @@
   <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
-      <p class="text-center max-w-2xl mx-auto">Com anos de experiência, oferecemos serviços elétricos de alta qualidade, focados na segurança e satisfação dos nossos clientes.</p>
+      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais clique aqui!</a></p>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonials" class="py-16 hero-text">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Depoimentos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Ótimo serviço! Resolveram todos os problemas elétricos da minha casa com eficiência."</p>
-          <h4 class="mt-4 font-semibold">— João Silva</h4>
-        </div>
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Recomendo a todos. Equipe profissional e muito confiável."</p>
-          <h4 class="mt-4 font-semibold">— Maria Oliveira</h4>
-        </div>
-      </div>
-    </div>
-  </section>
+<!-- Comentários Section -->
+<section id="comments" class="py-16 hero-text">
+<!-- Frase de incentivo para deixar comentário -->
+<div class="text-center mb-4">
+  <p class="text-lg">Deixe seu comentário abaixo!</p>
+</div>
 
-  <!-- Contact Section -->
-  <section id="contact" class="bg-accent py-16 container">
-    <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
-    <form class="max-w-lg mx-auto space-y-4">
-      <input type="text" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded" />
-      <input type="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded" />
-      <textarea placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded"></textarea>
-      <button type="submit" class="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
-    </form>
-  </section>
+<!-- Carrossel de Comentários -->
+<div id="commentCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner" id="carousel-comments">
+    <?php
+    include('config.php');
+
+    // Busca os comentários no banco de dados
+    $result = $conn->query("SELECT * FROM comentarios");
+
+    $is_first_slide = true;
+    $comment_count = 0;
+    $comments_in_slide = ""; // Variável para armazenar os comentários de um slide
+
+    while ($row = $result->fetch_assoc()) {
+        // Adiciona o comentário ao slide
+        $comments_in_slide .= "
+            <div class='col-md-6 text-center mb-4'>
+                <div class='bg-white p-4 rounded-lg shadow-md'>
+                    <p class='text-sm text-gray-500'>" . $row['comentario'] . "</p>
+                    <p class='text-sm text-gray-500'>— " . $row['nome'] . "</p>
+                </div>
+            </div>
+        ";
+
+        $comment_count++;
+
+        // Quando 2 comentários forem adicionados, cria um slide novo
+        if ($comment_count % 2 == 0) {
+            echo $is_first_slide ? "<div class='carousel-item active'>" : "<div class='carousel-item'>";
+            echo "<div class='row justify-content-center'>";
+            echo $comments_in_slide;
+            echo "</div></div>";
+            $is_first_slide = false; // Depois do primeiro slide, ele não é mais ativo por padrão
+            $comments_in_slide = ""; // Resetamos a variável para o próximo slide
+        }
+    }
+
+    // Se restar um comentário, colocamos ele em um slide extra
+    if ($comments_in_slide != "") {
+        echo "<div class='carousel-item'>";
+        echo "<div class='row justify-content-center'>";
+        echo $comments_in_slide;
+        echo "</div></div>";
+    }
+    ?>
+  </div>
+
+<!-- Botão para exibir o formulário de comentário -->
+<div class="text-center mb-8">
+  <button id="show-form-btn" class="bg-gray-800 text-white px-4 py-2 rounded hover:text-primary">
+    Escrever Comentário
+  </button>
+</div>
+
+<!-- Formulário de Envio de Comentário (inicialmente oculto) -->
+<div id="comment-form-container" class="hidden mt-8 text-center">
+  <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 text-center">
+    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required />
+    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required></textarea>
+    <button type="submit" class="w-full md:w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 mx-auto">
+      Enviar Comentário
+    </button>
+  </form>
+</div>
+
+
+</section>
+
+<!-- Contact Section (sem alterações, voltando ao formato anterior) -->
+<section id="contact" class="bg-accent py-16 container">
+  <h2 class="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
+  <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
+    <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
+    <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
+    <textarea name="mensagem" placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded text-black" required></textarea>
+    <button type="submit" class="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
+  </form>
+</section>
+
 
   <!-- Footer Section -->
 <footer class="bg-black text-white py-8 mt-16">
   <div class="container mx-auto text-center">
       <div class="mb-4">
-          <p class="text-lg">Entre em Contato</p>
+          <p class="text-lg">Atendimento</p>
           <p class="text-sm">Email: contato@celetrica.com.br | Telefone: (19) 99999-9999</p>
       </div>
       
       <!-- Redes Sociais -->
       <div class="space-x-4">
-          <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400"><i class="fab fa-whatsapp-square"></i></a>
-          <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400  text-3xl"><i class="fab fa-whatsapp-square"></i></a>
+          <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600  text-3xl"><i class="fab fa-instagram-square"></i></a>
       </div>
       
       <!-- Copyright -->
@@ -271,9 +329,15 @@ themeToggleMobile.addEventListener("click", () => {
   }
 });
 
-
 </script>
 
+<script>
+  document.getElementById("show-form-btn").addEventListener("click", function() {
+  var formContainer = document.getElementById("comment-form-container");
+  formContainer.classList.toggle("hidden");
+});
+
+</script>
 
 </body>
 </html>
