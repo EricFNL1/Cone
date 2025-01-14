@@ -121,13 +121,13 @@
       <div id="carouselExample" class="carousel slide container mt-5 carousel-fade">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/carrosel1.jpg" class="d-block w-100" alt="...">
+            <img src="img/carrosel1.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
           </div>
           <div class="carousel-item">
-            <img src="img/carrosel2.jpg" class="d-block w-100" alt="...">
+            <img src="img/carrosel2.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
           </div>
           <div class="carousel-item">
-            <img src="img/carrosel3.jpg" class="d-block w-100" alt="...">
+            <img src="img/carrosel3.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -150,7 +150,7 @@
   <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
-      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais clique aqui!</a></p>
+      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais, clique aqui!</a></p>
     </div>
   </section>
 
