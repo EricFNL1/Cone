@@ -150,7 +150,7 @@
   <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Sobre Nós</h2>
-      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais clique aqui!</a></p>
+      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais, clique aqui!</a></p>
     </div>
   </section>
 
