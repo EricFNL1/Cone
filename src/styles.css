@@ -23,6 +23,9 @@ body {
     color: #000000;
   }
 
+  body.light-theme #trocar {
+    color: #000000;
+  }
   body.light-theme header {
     background-color: #f8f9fa;
     color: #000000;

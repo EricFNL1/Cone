@@ -31,7 +31,7 @@
         <!-- Menu (visível apenas em telas grandes) -->
         <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
             <li><a href="index.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Home</a></li>
-            <li><a href="#about" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Sobre</a></li>
+            <li><a href="sobrenos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Sobre</a></li>
             <li><a href="maisservicos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Mais Serviços</a></li>
             <li><a href="#contact" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">Contato</a></li>
             <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
@@ -46,78 +46,54 @@
     <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
       <ul>
         <li><a href="index.html" class="block p-4">Home</a></li>
-        <li><a href="#about" class="block p-4">Sobre</a></li>
+        <li><a href="sobrenos.html" class="block p-4">Sobre</a></li>
         <li><a href="maisservicos.html" class="block p-4">Mais Serviços</a></li>
         <li><a href="#contact" class="block p-4">Contato</a></li>
-        <button id="theme-toggle" class="bg-transparent text-black p-2 rounded-lg">
-          <i id="theme-icon" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+        <button id="theme-toggle-mobile" class="bg-transparent text-black p-2 rounded-lg">
+          <i id="theme-icon-mobile" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
         </button>
       </ul>
     </div>
   
-
-
   <!-- WhatsApp Button -->
   <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
   </a>
 
-  
   <!-- About Section -->
-  <section id="about" class=" sobrenos bg-warning bg-[rgba(0,0,0,0.3)] text-black py-16 hero-text">
-    <div class="container mx-auto flex items-center justify-center">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-          <!-- Imagem -->
-          <div class="text-center md:text-left">
-            <img src="img/sobrenos.jpg" alt="Imagem sobre a empresa" class="w-3/4 md:w-1/2 h-auto rounded-lg shadow-lg mx-auto">
-          </div>
-          
-          <!-- Texto -->
-          <div class="text-center md:text-left">
-            <h2 class="text-3xl font-bold mb-8">Sobre Nós</h2>
-            <p class="max-w-2xl mx-auto md:mx-0">
-                Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente.
-
-                Nosso principal objetivo é garantir a segurança e a satisfação dos nossos clientes, utilizando as melhores práticas do mercado e tecnologias modernas para atender às suas necessidades. Valorizamos a confiança e o bem-estar de quem escolhe nossos serviços, e nos empenhamos em construir relações duradouras baseadas na transparência e no profissionalismo.
-
-                Seja para projetos residenciais, comerciais ou industriais, estamos prontos para transformar desafios em soluções confiáveis e inovadoras. Escolher nossos serviços é optar por qualidade, segurança e uma experiência diferenciada.
-            </p>
-          </div>
-        </div>
-    </div>
-</section>
-
-
-
-
-  <!-- Testimonials Section -->
   <section id="testimonials" class="py-16 hero-text">
-    <div class="container mx-auto">
-      <h2 class="text-3xl font-bold text-center mb-8">Depoimentos</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Ótimo serviço! Resolveram todos os problemas elétricos da minha casa com eficiência."</p>
-          <h4 class="mt-4 font-semibold">— João Silva</h4>
+    <div class="container mx-auto flex items-center justify-center">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <!-- Imagem -->
+        <div class="text-center md:text-left">
+          <img src="img/sobrenos.jpg" alt="Imagem sobre a empresa" class="w-3/4 md:w-1/2 h-auto rounded-lg shadow-lg mx-auto">
         </div>
-        <div class="p-6 bg-white text-black rounded shadow-md">
-          <p>"Recomendo a todos. Equipe profissional e muito confiável."</p>
-          <h4 class="mt-4 font-semibold">— Maria Oliveira</h4>
+        
+        <!-- Texto -->
+        <div class="text-center md:text-left">
+          <h2 class="text-3xl font-bold mb-8">Sobre Nós</h2>
+          <p id="trocar" class="max-w-2xl mx-auto md:mx-0">
+              Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente.
+
+              Nosso principal objetivo é garantir a segurança e a satisfação dos nossos clientes, utilizando as melhores práticas do mercado e tecnologias modernas para atender às suas necessidades. Valorizamos a confiança e o bem-estar de quem escolhe nossos serviços, e nos empenhamos em construir relações duradouras baseadas na transparência e no profissionalismo.
+
+              Seja para projetos residenciais, comerciais ou industriais, estamos prontos para transformar desafios em soluções confiáveis e inovadoras. Escolher nossos serviços é optar por qualidade, segurança e uma experiência diferenciada.
+          </p>
         </div>
       </div>
-    </div>
+  </div>
   </section>
 
   <!-- Contact Section -->
-  <section id="contact" class="bg-accent py-16 container ">
+  <section id="contact" class="bg-accent py-16 container">
     <h2 class="text-3xl font-bold text-center mb-8">Contato</h2>
-    <form class="max-w-lg mx-auto space-y-4">
-      <input type="text" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded" />
-      <input type="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded" />
-      <textarea placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded"></textarea>
+    <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
+      <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
+      <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
+      <textarea name="mensagem" placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded text-black" required></textarea>
       <button type="submit" class="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
     </form>
   </section>
-
   <!-- Footer Section -->
 <footer class="bg-black text-white py-8 mt-16">
   <div class="container mx-auto text-center">
@@ -159,12 +135,17 @@
 <script>
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
+const themeToggleMobile = document.getElementById("theme-toggle-mobile");
+const themeIconMobile = document.getElementById("theme-icon-mobile");
 
 // Checar se há uma preferência salva no localStorage
 if (localStorage.getItem("theme") === "light") {
   document.body.classList.add("light-theme");
   themeIcon.classList.remove("fa-moon");
   themeIcon.classList.add("fa-sun");
+
+  themeIconMobile.classList.remove("fa-moon");
+  themeIconMobile.classList.add("fa-sun");
 }
 
 themeToggle.addEventListener("click", () => {
@@ -175,14 +156,44 @@ themeToggle.addEventListener("click", () => {
     localStorage.setItem("theme", "light");
     themeIcon.classList.remove("fa-moon");
     themeIcon.classList.add("fa-sun");
+
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
   } else {
     localStorage.setItem("theme", "dark");
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
+  }
+});
+
+themeToggleMobile.addEventListener("click", () => {
+  document.body.classList.toggle("light-theme");
+
+  // Alterar o ícone e salvar a preferência no localStorage
+  if (document.body.classList.contains("light-theme")) {
+    localStorage.setItem("theme", "light");
+    themeIconMobile.classList.remove("fa-moon");
+    themeIconMobile.classList.add("fa-sun");
+
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  } else {
+    localStorage.setItem("theme", "dark");
+    themeIconMobile.classList.remove("fa-sun");
+    themeIconMobile.classList.add("fa-moon");
+
     themeIcon.classList.remove("fa-sun");
     themeIcon.classList.add("fa-moon");
   }
 });
 
+
 </script>
+
+
 
 
 </body>
