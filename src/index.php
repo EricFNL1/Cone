@@ -52,7 +52,7 @@
             </a>
           </li>
           <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
-            <i id="theme-icon" class="fas fa-moon text-2xl"></i> <!-- Ícone padrão (lua) -->
+            <i id="theme-icon" class="fas fa-moon text-1xl"></i> <!-- Ícone padrão (lua) -->
           </button>
         </ul>
         
@@ -210,8 +210,8 @@
 <!-- Formulário de Envio de Comentário (inicialmente oculto) -->
 <div id="comment-form-container" class="hidden mt-8 text-center">
   <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 text-center">
-    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required />
-    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required></textarea>
+    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required maxlength="100" />
+    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required maxlength="130"></textarea>
     <button type="submit" class="w-full md:w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 mx-auto">
       Enviar Comentário
     </button>
@@ -222,19 +222,19 @@
 </section>
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
-<section id="contact" class="bg-accent py-16 container">
+<section id="contact" class="bg-accent container">
   <h2 class="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
     <textarea name="mensagem" placeholder="Sua Mensagem" class="w-full px-4 py-2 border rounded text-black" required></textarea>
-    <button type="submit" class="w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
+    <button type="submit" class=" mb-3 w-full px-4 py-2 bg-black text-white rounded hover:bg-gray-800">Enviar</button>
   </form>
 </section>
 
 
   <!-- Footer Section -->
-<footer class="bg-black text-white py-8 mt-16">
+<footer class="bg-black text-white py-8 mt-10">
   <div class="container mx-auto text-center">
       <div class="mb-4">
           <p class="text-lg">Atendimento</p>
