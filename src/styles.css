@@ -23,6 +23,10 @@ body {
     color: #000000;
   }
 
+  body.light-theme .trocar {
+    color: black;
+  }
+
   body.light-theme #trocar {
     color: #000000;
   }

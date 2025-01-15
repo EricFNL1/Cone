@@ -13,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($conn->query($sql) === TRUE) {
         // Se o comentário for salvo com sucesso, redirecionar para a página de comentários
-        header("Location: index.php"); // Ou a página que você deseja
+        header("Location: index.php?status=success"); // Ou a página que você deseja
         exit();
     } else {
         echo "Erro: " . $conn->error;
