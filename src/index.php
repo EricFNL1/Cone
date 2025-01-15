@@ -157,7 +157,7 @@
 <!-- Comentários Section -->
 <section id="comments" class="py-16 hero-text">
 <!-- Frase de incentivo para deixar comentário -->
-<div class="text-center mb-4">
+<div class="text-center mb-5">
   <p class="text-lg">Deixe seu comentário abaixo!</p>
 </div>
 
