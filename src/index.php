@@ -162,7 +162,7 @@
 </div>
 
 <!-- Carrossel de Comentários -->
-<div id="commentCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="commentCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
   <div class="carousel-inner" id="carousel-comments">
     <?php
     include('config.php');
@@ -209,7 +209,7 @@
   </div>
 
 <!-- Botão para exibir o formulário de comentário -->
-<div class="text-center mb-8 mt-3">
+<div class="text-center mb-8 mt-5">
   <button id="show-form-btn" class="bg-gray-800 text-white px-4 py-2 rounded hover:text-primary">
     Escrever Comentário
   </button>
