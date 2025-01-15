@@ -215,18 +215,22 @@
   </button>
 </div>
 
-<!-- Formulário de Envio de Comentário (inicialmente oculto) -->
+<!-- Formulário de Comentário (inicialmente oculto) -->
 <div id="comment-form-container" class="hidden mt-8 text-center">
   <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 text-center">
-    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required maxlength="100" />
-    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required maxlength="130"></textarea>
-    <button type="submit" class="w-full md:w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800 mx-auto">
-      Enviar Comentário
-    </button>
+    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required />
+    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required></textarea>
+    <div class="flex justify-center space-x-4 mt-4">
+      <!-- Botões de Enviar e Cancelar -->
+      <button type="submit" class="w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
+        Enviar Comentário
+      </button>
+      <button type="button" id="cancel-btn" class="w-1/2 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700">
+        Cancelar
+      </button>
+    </div>
   </form>
 </div>
-
-
 </section>
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
@@ -265,6 +269,35 @@
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 
+  <!-- Animação para ocultar o botão "Escrever Comentário" -->
+<script>
+  // Selecionando os elementos
+  const showFormBtn = document.getElementById('show-form-btn');
+  const commentFormContainer = document.getElementById('comment-form-container');
+  const cancelBtn = document.getElementById('cancel-btn');
+
+  // Função para exibir o formulário e esconder o botão "Escrever Comentário"
+  showFormBtn.addEventListener('click', function() {
+    // Adicionando animação para desaparecer o botão "Escrever Comentário"
+    showFormBtn.style.animation = 'fadeOut 0.5s forwards';
+    
+    // Exibindo o formulário de comentário após a animação
+    setTimeout(function() {
+      commentFormContainer.classList.remove('hidden');
+    }, 500);  // Atraso para o botão desaparecer primeiro
+  });
+
+  // Função para esconder o formulário e exibir o botão "Escrever Comentário" novamente
+  cancelBtn.addEventListener('click', function() {
+    // Ocultando o formulário de comentário
+    commentFormContainer.classList.add('hidden');
+    
+    // Reaparecendo o botão "Escrever Comentário" com animação
+    showFormBtn.style.animation = 'fadeIn 0.5s forwards';
+  });
+</script>
+
+   <!-- temas menu -->
   <script>
     // Gerencia a exibição do menu pop-up
     const hamburgerCheckbox = document.getElementById("hamburger-checkbox");
@@ -279,6 +312,7 @@
     });
   </script>
 
+   <!-- temas menu claro/dark -->
 <script>
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
@@ -339,15 +373,7 @@ themeToggleMobile.addEventListener("click", () => {
 
 </script>
 
-<script>
-  document.getElementById("show-form-btn").addEventListener("click", function() {
-  var formContainer = document.getElementById("comment-form-container");
-  formContainer.classList.toggle("hidden");
-});
-
-</script>
-
-<!-- Adicione o link para SweetAlert2 -->
+<!-- Adicione o link para SweetAlert2 || Alertas -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 <?php
@@ -369,7 +395,6 @@ if (isset($_GET['email_status'])) {
     }
 }
 ?>
-
 
 </body>
 </html>
