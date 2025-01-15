@@ -118,16 +118,16 @@
           <p class="mt-4">Instalações elétricas para edifícios comerciais e residenciais, com foco em segurança, funcionalidade e conformidade com as normas.</p>
         </div>
       </div>
-      <div id="carouselExample" class="carousel slide container mt-5 carousel-fade">
+      <div id="carouselExample" class="carousel slide container mt-5 carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="img/carrosel1.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
-          </div>
-          <div class="carousel-item">
             <img src="img/carrosel2.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
           </div>
           <div class="carousel-item">
             <img src="img/carrosel3.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+          </div>
+          <div class="carousel-item">
+            <img src="img/carrosel1.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
