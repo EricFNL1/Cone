@@ -155,7 +155,7 @@
   </section>
 
 <!-- Comentários Section -->
-<section id="comments" class="py-16 hero-text">
+<section id="comments" class="py-16 hero-text ">
 <!-- Frase de incentivo para deixar comentário -->
 <div class="text-center mb-5">
   <p class="text-lg trocar">Deixe seu comentário abaixo!</p>
@@ -216,10 +216,10 @@
 </div>
 
 <!-- Formulário de Comentário (inicialmente oculto) -->
-<div id="comment-form-container" class="hidden mt-8 text-center">
-  <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 text-center">
-    <input type="text" name="nome" class="w-full md:w-1/2 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Nome" required />
-    <textarea name="comentario" class="w-full md:w-1/2 mt-4 px-4 py-2 border rounded text-black mx-auto" placeholder="Seu Comentário" required></textarea>
+<div id="comment-form-container" class="hidden mt-8 text-center container">
+  <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 mx-auto text-center max-w-lg">
+    <input type="text" name="nome" class="w-full px-4 py-2 border rounded text-black" placeholder="Seu Nome" required />
+    <textarea name="comentario" class="w-full px-4 py-2 border rounded text-black" placeholder="Seu Comentário" required></textarea>
     <div class="flex justify-center space-x-4 mt-4">
       <!-- Botões de Enviar e Cancelar -->
       <button type="submit" class="w-1/2 px-4 py-2 bg-black text-white rounded hover:bg-gray-800">
