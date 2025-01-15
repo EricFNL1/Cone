@@ -119,51 +119,102 @@
 
   <!-- Services Section -->
   <section id="services" class="py-16 hero-text">
-    <div class="container mx-auto">
-      <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold">Instalações Elétricas</h3>
-          <p class="mt-4">Realizamos instalações elétricas seguras e eficientes, desde a entrada de energia até os circuitos finais, atendendo todas as normas de segurança.</p>
-        </div>
-  
-        <!-- Card de Reparos e Manutenções -->
-        <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold">Reparos e Manutenções</h3>
-          <p class="mt-4">Oferecemos reparos rápidos e seguros, incluindo troca de disjuntores e reparo de curto-circuitos, restaurando sua rede elétrica com eficiência.</p>
-        </div>
-  
-        <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
-          <h3 class="text-xl font-semibold">Instalações Elétricas Prediais</h3>
-          <p class="mt-4">Instalações elétricas para edifícios comerciais e residenciais, com foco em segurança, funcionalidade e conformidade com as normas.</p>
+  <div class="container mx-auto">
+    <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Nossos Serviços</h2>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Card de Instalações Elétricas com Carrossel -->
+      <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+        <h3 class="text-xl font-semibold">Instalações Elétricas</h3>
+        <p class="mt-4">Realizamos instalações elétricas seguras e eficientes, desde a entrada de energia até os circuitos finais, atendendo todas as normas de segurança.</p>
+        
+        <!-- Carrossel dentro do card -->
+        <div id="carouselInstalacoes" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselInstalacoes" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselInstalacoes" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
       </div>
-      <div id="carouselExample" class="carousel slide container mt-5 carousel-fade" data-bs-ride="carousel" data-bs-interval="3000">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img src="img/carrosel2.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+
+      <!-- Card de Reparos e Manutenções com Carrossel -->
+      <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+        <h3 class="text-xl font-semibold">Reparos e Manutenções</h3>
+        <p class="mt-4">Oferecemos reparos rápidos e seguros, incluindo troca de disjuntores e reparo de curto-circuitos, restaurando sua rede elétrica com eficiência.</p>
+        
+        <!-- Carrossel dentro do card -->
+        <div id="carouselReparos" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de disjuntor">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de fiação elétrica">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de instalação elétrica">
+            </div>
           </div>
-          <div class="carousel-item">
-            <img src="img/carrosel3.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
-          </div>
-          <div class="carousel-item">
-            <img src="img/carrosel1.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
-          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselReparos" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselReparos" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
         </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Next</span>
-        </button>
+      </div>
+
+      <!-- Card de Instalações Elétricas Prediais com Carrossel -->
+      <div class="p-6 bg-white text-black rounded shadow-md hover:scale-105 transition-transform duration-300 ease-in-out">
+        <h3 class="text-xl font-semibold">Instalações Elétricas Prediais</h3>
+        <p class="mt-4">Instalações elétricas para edifícios comerciais e residenciais, com foco em segurança, funcionalidade e conformidade com as normas.</p>
+        
+        <!-- Carrossel dentro do card -->
+        <div id="carouselPrediais" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica predial">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica predial em edifício">
+            </div>
+            <div class="carousel-item">
+              <img src="img/carrosel.jpg" class="d-block w-100" alt="Projeto de instalações prediais">
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrediais" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselPrediais" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
       </div>
     </div>
-    <div class="bg-cover bg-center bg-no-repeat flex items-center justify-center">
-      <a href="maisservicos.html"><button class="bg-primary text-white px-4 py-2 mt-4 hover:scale-105 transition-transform duration-300 ease-in-out">Saiba Mais</button></a>
-    </div>
-  </section>
+  </div>
+  <div class="bg-cover bg-center bg-no-repeat flex items-center justify-center">
+    <a href="maisservicos.html"><button class="bg-primary text-white px-4 py-2 mt-4 hover:scale-105 transition-transform duration-300 ease-in-out">Saiba Mais</button></a>
+  </div>
+</section>
+
 
      <!-- Hero Section -->
      <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center mt-5" style="background-image: url('img/fundofinal.png');">
