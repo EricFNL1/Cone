@@ -127,4 +127,7 @@ html {
   100% { opacity: 1; visibility: visible; }
 }
 
-
+.carousel-img {
+  height: 300px; /* Defina a altura que você deseja */
+  object-fit: cover; /* Garante que a imagem cubra toda a área sem distorção */
+}

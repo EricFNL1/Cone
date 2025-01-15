@@ -131,13 +131,10 @@
         <div id="carouselInstalacoes" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+              <img src="img/carrosel7.jpg" class="d-block w-100 carousel-img" alt="Instalação elétrica em uma casa">
             </div>
             <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
-            </div>
-            <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica em uma casa">
+              <img src="img/carrosel3.jpg" class="d-block w-100 carousel-img" alt="Instalação elétrica em uma casa">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselInstalacoes" data-bs-slide="prev">
@@ -160,13 +157,10 @@
         <div id="carouselReparos" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de disjuntor">
+              <img src="img/carrosel5.jpg" class="d-block w-100 carousel-img" alt="Reparo de disjuntor">
             </div>
             <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de fiação elétrica">
-            </div>
-            <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Reparo de instalação elétrica">
+              <img src="img/carrosel8.jpg" class="d-block w-100 carousel-img" alt="Reparo de fiação elétrica">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselReparos" data-bs-slide="prev">
@@ -189,13 +183,10 @@
         <div id="carouselPrediais" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
           <div class="carousel-inner">
             <div class="carousel-item active">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica predial">
+              <img src="img/caixaagrupada[1].jpg" class="d-block w-100 carousel-img" alt="Instalação elétrica predial">
             </div>
             <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Instalação elétrica predial em edifício">
-            </div>
-            <div class="carousel-item">
-              <img src="img/carrosel.jpg" class="d-block w-100" alt="Projeto de instalações prediais">
+              <img src="img/caixaagrupada[2].jpg" class="d-block w-100 carousel-img" alt="Instalação elétrica predial em edifício">
             </div>
           </div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselPrediais" data-bs-slide="prev">
