@@ -19,9 +19,6 @@ body {
     color: #000000;
   }
   
-  body.light-theme h2 {
-    color: #000000;
-  }
 
   body.light-theme .trocar {
     color: black;
