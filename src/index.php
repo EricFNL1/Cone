@@ -158,7 +158,7 @@
 <section id="comments" class="py-16 hero-text">
 <!-- Frase de incentivo para deixar comentário -->
 <div class="text-center mb-5">
-  <p class="text-lg">Deixe seu comentário abaixo!</p>
+  <p class="text-lg trocar">Deixe seu comentário abaixo!</p>
 </div>
 
 <!-- Carrossel de Comentários -->
@@ -346,6 +346,30 @@ themeToggleMobile.addEventListener("click", () => {
 });
 
 </script>
+
+<!-- Adicione o link para SweetAlert2 -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<?php
+if (isset($_GET['status'])) {
+    $status = $_GET['status'];
+    if ($status == 'success') {
+        echo "<script>Swal.fire('Sucesso!', 'Comentário enviado com sucesso!', 'success');</script>";
+    } else if ($status == 'error') {
+        echo "<script>Swal.fire('Erro!', 'Erro ao enviar comentário. Tente novamente!', 'error');</script>";
+    }
+}
+
+if (isset($_GET['email_status'])) {
+    $email_status = $_GET['email_status'];
+    if ($email_status == 'success') {
+        echo "<script>Swal.fire('Sucesso!', 'E-mail enviado com sucesso!', 'success');</script>";
+    } else if ($email_status == 'error') {
+        echo "<script>Swal.fire('Erro!', 'Erro ao enviar o e-mail. Tente novamente!', 'error');</script>";
+    }
+}
+?>
+
 
 </body>
 </html>

@@ -19,9 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Enviar o e-mail
     if (mail($para, $assunto, $corpo, $headers)) {
-        echo "Mensagem enviada com sucesso!";
+        // Redireciona com a mensagem de sucesso
+        header("Location: index.php?email_status=success");
+        exit();
     } else {
-        echo "Ocorreu um erro ao enviar a mensagem. Tente novamente.";
+        // Redireciona com a mensagem de erro
+        header("Location: index.php?email_status=error");
+        exit();
     }
 }
 ?>
