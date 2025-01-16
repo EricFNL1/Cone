@@ -465,5 +465,58 @@ if (isset($_GET['email_status'])) {
 }
 ?>
 
+<script>
+function verificarComentario(comentario) {
+    // Lista de palavras proibidas
+     // Função para verificar se o comentário contém palavras proibidas
+    const palavrasProibidas = [
+        'caralho', 'porra', 'merda', 'foda-se', 'cu', 'buceta', 'viado',
+        'puto', 'desgraçado', 'imbecil', 'filha da puta', 'otário', 'arrombado',
+        'cuzão', 'porra louca', 'piranha', 'safada', 'vadia', 'escroto', 'filha da puta',
+        'fuder', 'cacete', 'cu de rato', 'merdinha', 'bosta', 'palhaço', 'retardado', 'cagar',
+        'bucetuda', 'maldito'
+    ];
+
+    // Verifica se o comentário contém alguma palavra proibida
+    for (let i = 0; i < palavrasProibidas.length; i++) {
+        if (comentario.toLowerCase().includes(palavrasProibidas[i])) {
+            return true;  // Retorna verdadeiro se alguma palavra proibida for encontrada
+        }
+    }
+    return false;  // Retorna falso se não houver palavras proibidas
+}
+
+// Função para exibir o alerta do SweetAlert2
+function mostrarAlerta() {
+    Swal.fire({
+        icon: 'error',
+        title: 'Comentário inapropriado!',
+        text: 'Por favor, evite usar palavras inapropriadas.',
+        confirmButtonText: 'Ok'
+    }).then(function() {
+    });
+}
+
+// Evento do formulário de comentário
+document.getElementById("comment-form").addEventListener("submit", function(event) {
+    event.preventDefault();  // Impede o envio do formulário automaticamente
+
+    // Obter os dados do formulário
+    const nome = document.querySelector("input[name='nome']").value;
+    const comentario = document.querySelector("textarea[name='comentario']").value;
+
+    // Verifica se o comentário contém palavras proibidas
+    if (verificarComentario(comentario)) {
+        // Se encontrar palavras proibidas, exibe o alerta
+        mostrarAlerta();
+    } else {
+        // Se não houver palavras proibidas, o formulário pode ser enviado
+        this.submit();  // Envia o formulário
+    }
+});
+
+</script>
+
+
 </body>
 </html>
