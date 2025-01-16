@@ -20,6 +20,7 @@
 <link rel="stylesheet" href="/dist/complemento.css"> <!-- Onde estão os estilos do menu -->
 <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="complemento.css"> <!-- Onde estão os estilos do menu -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
   
   <!-- Font Awesome CDN para o ícone do WhatsApp -->
@@ -39,31 +40,30 @@
 
         <!-- Menu (visível apenas em telas grandes) -->
         <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
-          <li>
-            <a href="#services" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
-              Serviços
-            </a>
-          </li>
-          <li>
-            <a href="sobrenos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
-              Sobre
-            </a>
-          </li>
-          <li>
-            <a href="maisservicos.html" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
-              Mais Serviços
-            </a>
-          </li>
-          <li>
-            <a href="#contact" class="hover:text-white hover:bg-primary transition-all duration-300 ease-in-out p-2 lg:p-0 transform hover:scale-105 hover:shadow-lg">
-              Contato
-            </a>
-          </li>
-          <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
-            <i id="theme-icon" class="fas fa-moon text-1xl"></i> <!-- Ícone padrão (lua) -->
-          </button>
-        </ul>
-        
+  <li>
+    <a href="#services" class="transition-all duration-300 ease-in-out">
+      Serviços
+    </a>
+  </li>
+  <li>
+    <a href="sobrenos.html" class="transition-all duration-300 ease-in-out">
+      Sobre
+    </a>
+  </li>
+  <li>
+    <a href="maisservicos.html" class="transition-all duration-300 ease-in-out">
+      Mais Serviços
+    </a>
+  </li>
+  <li>
+    <a href="#contact" class="transition-all duration-300 ease-in-out">
+      Contato
+    </a>
+  </li>
+  <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
+    <i id="theme-icon" class="fas fa-moon text-1xl"></i>
+  </button>
+</ul>
       </nav>
     </div>
   </header>
