@@ -106,7 +106,7 @@
   <div class="absolute inset-0 flex items-center justify-center text-center text-white z-10">
     <div class="max-w-2xl mx-auto">
       <h2 class="text-3xl font-semibold">Eletricista Profissional à Sua Disposição</h2>
-      <p class="text-lg mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa. Seja para instalações, manutenções ou automação, nossa equipe é altamente qualificada para atender às suas necessidades com eficiência e segurança.</p>
+      <p class="text-lg mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa. Seja para instalações ou manutenções, nossa equipe é altamente qualificada para atender às suas necessidades com eficiência e segurança.</p>
     </div>
   </div>
 </section>
@@ -220,7 +220,7 @@
   <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Quem somos?</h2>
-      <p class="text-center max-w-2xl mx-auto">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais, clique aqui!</a></p>
+      <p class="text-center max-w-2xl mx-auto font-bold">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais, clique aqui!</a></p>
     </div>
   </section>
 
