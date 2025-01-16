@@ -131,3 +131,31 @@ html {
   height: 300px; /* Defina a altura que você deseja */
   object-fit: cover; /* Garante que a imagem cubra toda a área sem distorção */
 }
+
+#menu a {
+  font-family: 'Poppins', sans-serif; /* Altere para a fonte desejada */
+  font-size: 18px; /* Tamanho da fonte */
+  color: #333; /* Cor padrão */
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+#menu a:hover {
+  color: #ffffff; /* Cor do hover */
+}
+
+#menu a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff; /* Cor do sublinhado */
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+#menu a:hover::after {
+  width: 100%; /* Faz o sublinhado animar */
+}
