@@ -32,10 +32,12 @@
   <div class="container mx-auto flex justify-between items-center p-4">
     <!-- Logo à esquerda -->
     <h1 class="text-xl font-bold">
-      <a href="index.php"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></a>
+      <a href="index.php">
+        <img src="img/logo.png" alt="Eletricista Profissional" width="80px">
+      </a>
     </h1>
 
-    <!-- Menu hambúrguer (visível apenas em telas pequenas, usando lg:hidden) -->
+    <!-- Menu hambúrguer (visível apenas em telas pequenas) -->
     <input type="checkbox" id="hamburger-checkbox" class="hidden" />
     <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer absolute right-4">
       <i class="fas fa-bars"></i>
@@ -44,35 +46,21 @@
     <!-- Menu com itens centralizados (Visível em telas grandes) -->
     <nav class="flex-grow">
       <ul id="menu" class="lg:flex hidden justify-center space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
-        <li>
-          <a href="#services" class="transition-all duration-300 ease-in-out">
-            Serviços
-          </a>
-        </li>
-        <li>
-          <a href="sobrenos.html" class="transition-all duration-300 ease-in-out">
-            Sobre
-          </a>
-        </li>
-        <li>
-          <a href="maisservicos.html" class="transition-all duration-300 ease-in-out">
-            Mais Serviços
-          </a>
-        </li>
-        <li>
-          <a href="#contact" class="transition-all duration-300 ease-in-out">
-            Contato
-          </a>
-        </li>
+        <li><a href="#services" class="transition-all duration-300 ease-in-out">Serviços</a></li>
+        <li><a href="sobrenos.html" class="transition-all duration-300 ease-in-out">Sobre</a></li>
+        <li><a href="maisservicos.html" class="transition-all duration-300 ease-in-out">Mais Serviços</a></li>
+        <li><a href="#contact" class="transition-all duration-300 ease-in-out">Contato</a></li>
       </ul>
     </nav>
 
-    <!-- Botão de trocar de tema (Visível apenas em telas acima de 1024px) -->
+    <!-- Botão de trocar de tema (Visível apenas em telas grandes) -->
     <button id="theme-toggle" class="bg-transparent text-black rounded-lg hidden lg:block ml-auto">
       <i id="theme-icon" class="fas fa-moon text-1xl"></i>
     </button>
   </div>
 </header>
+
+
 
 
 
@@ -524,7 +512,6 @@ document.getElementById("comment-form").addEventListener("submit", function(even
 });
 
 </script>
-
 
 </body>
 </html>
