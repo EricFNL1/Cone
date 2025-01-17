@@ -28,7 +28,7 @@
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
-  <header class="bg-warning text-black sticky top-0 z-50 shadow-md">
+  <header class="bg-warning text-black top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
       <h1 class="text-xl font-bold"><a href="index.php"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></a></h1>
       <nav>
