@@ -19,37 +19,54 @@
 </head>
 <body class="bg-background text-white font-sans">
   <!-- Header -->
-  <header class="bg-warning text-black  top-0 z-50 shadow-md">
+  <header class="bg-warning text-black top-0 z-50 shadow-md">
     <div class="container mx-auto flex justify-between items-center p-4">
-      <h1 class="text-xl font-bold"><a href="index.php"><img src="img/logo.png" alt="Eletricista Profissional" width="80px"></a></h1>
-      <nav>
-        <!-- Menu hambúrguer -->
-        <input type="checkbox" id="hamburger-checkbox" class="hidden">
-        <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer">
-          <i class="fas fa-bars"></i>
-        </label>
-
-        <!-- Menu (visível apenas em telas grandes) -->
-        <ul id="menu" class="lg:flex hidden space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
+      <!-- Logo à esquerda -->
+      <h1 class="text-xl font-bold">
+        <a href="index.php">
+          <img src="img/logo.png" alt="Eletricista Profissional" width="80px">
+        </a>
+      </h1>
+  
+      <!-- Menu hambúrguer (visível apenas em telas pequenas) -->
+      <input type="checkbox" id="hamburger-checkbox" class="hidden">
+      <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer absolute right-4">
+        <i class="fas fa-bars"></i>
+      </label>
+  
+      <!-- Menu com itens centralizados (Visível em telas grandes) -->
+      <nav class="flex-grow">
+        <ul id="menu" class="lg:flex hidden justify-center space-x-4 bg-warning p-2 rounded-lg lg:bg-transparent lg:p-0 flex-col lg:flex-row">
           <li>
-            <a href="index.php" class="menu-link">Home</a>
+            <a href="index.php" class="menu-link transition-all duration-300 ease-in-out hover:text-white hover:bg-primary p-2 rounded-lg">
+              Home
+            </a>
           </li>
           <li>
-            <a href="sobrenos.html" class="menu-link">Sobre</a>
+            <a href="sobrenos.html" class="menu-link transition-all duration-300 ease-in-out hover:text-white hover:bg-primary p-2 rounded-lg">
+              Sobre
+            </a>
           </li>
           <li>
-            <a href="maisservicos.html" class="menu-link">Mais Serviços</a>
+            <a href="maisservicos.html" class="menu-link transition-all duration-300 ease-in-out hover:text-white hover:bg-primary p-2 rounded-lg">
+              Mais Serviços
+            </a>
           </li>
           <li>
-            <a href="index.php#contact" class="menu-link">Contato</a>
+            <a href="index.php#contact" class="menu-link transition-all duration-300 ease-in-out hover:text-white hover:bg-primary p-2 rounded-lg">
+              Contato
+            </a>
           </li>
-          <button id="theme-toggle" class="bg-transparent text-black rounded-lg">
-            <i id="theme-icon" class="fas fa-moon text-1xl"></i> <!-- Ícone padrão (lua) -->
-          </button>
         </ul>
       </nav>
+  
+      <!-- Botão de trocar de tema (Visível apenas em telas grandes) -->
+      <button id="theme-toggle" class="bg-transparent text-black rounded-lg hidden lg:block ml-auto">
+        <i id="theme-icon" class="fas fa-moon text-1xl"></i>
+      </button>
     </div>
   </header>
+  
 
   <!-- Menu Pop-up (oculto inicialmente) -->
   <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
