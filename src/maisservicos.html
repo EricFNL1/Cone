@@ -91,13 +91,13 @@
   <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
      <!-- Balão de fala -->
-  <div class="absolute bottom-16 right-0 bg-white text-black p-2 rounded-lg shadow-lg w-max flex items-center mb-3">
-    <span class="text-sm">Posso ajudar?</span>
-  </div>
+     <div id="whatsapp-balloon" class="absolute bottom-16 right-0 bg-white text-black p-2 rounded-lg shadow-lg w-max flex items-center mb-3">
+      <span class="text-sm">Posso ajudar?</span>
+     </div>
   </a>
 
   <!-- Services Section -->
-  <section id="hero-carousel" class="py-16">
+  <section id="hero-carousel" class="py-16 hero-text">
     <div class="container mx-auto">
       <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Galeria de Serviços</h2>
       
@@ -196,7 +196,28 @@
 
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  
 
+  <script>
+    // Aguardar o carregamento da página
+    document.addEventListener("DOMContentLoaded", function() {
+    // Definir o tempo que o balão ficará visível (5 segundos)
+    setTimeout(function() {
+      // Encontrar o balão pelo id e aplicar a transição de fade-out
+      var balloon = document.getElementById("whatsapp-balloon");
+      
+      // Definindo opacidade para 0 para criar o efeito de desaparecimento
+      balloon.style.opacity = 0;
+
+      // Após a transição, esconder o elemento (evitar o espaço ocupado)
+      setTimeout(function() {
+        balloon.style.display = "none";
+      }, 1000); // Espera 1 segundo (tempo da transição)
+    }, 5000); // 5000ms = 5 segundos
+  });
+</script>
+
+  
   <script>
     // Gerencia a exibição do menu pop-up
     const hamburgerCheckbox = document.getElementById("hamburger-checkbox");
