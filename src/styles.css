@@ -159,3 +159,37 @@ html {
 #menu a:hover::after {
   width: 100%; /* Faz o sublinhado animar */
 }
+
+/* Para garantir que o balão apareça bem sobre o botão */
+/* Para garantir que o balão de fala apareça acima do botão */
+.hero-text {
+  position: relative; /* Permite que o balão use a posição relativa ao botão */
+}
+
+.hero-text .absolute {
+  position: absolute;
+  bottom: 100%; /* Coloca o balão acima do botão */
+  right: 50%; /* Alinha o balão ao centro horizontal do botão */
+  transform: translateX(50%); /* Ajusta para centralizar o balão com relação ao botão */
+  background-color: white; /* Cor de fundo do balão */
+  color: black;
+  font-size: 14px; /* Tamanho do texto */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 5px 10px; /* Espaçamento dentro do balão */
+  max-width: 160px; /* Largura máxima do balão */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  text-align: center; /* Centraliza o texto */
+  z-index: 10; /* Garante que o balão fique acima do botão */
+}
+
+/* Adiciona o efeito de "bico" ao balão */
+.hero-text .absolute:before {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent #ffffff transparent;
+}
