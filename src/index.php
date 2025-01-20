@@ -292,6 +292,7 @@
 <!-- Formulário de Comentário (inicialmente oculto) -->
 <div id="comment-form-container" class="hidden mt-8 text-center container">
   <form id="comment-form" action="save_comment.php" method="POST" class="space-y-4 mx-auto text-center max-w-lg">
+    <p class="text-lg trocar">Seu Comentário!</p>
     <input type="text" name="nome" class="w-full px-4 py-2 border rounded text-black" placeholder="Seu Nome" required />
     <textarea name="comentario" class="w-full px-4 py-2 border rounded text-black" placeholder="Seu Comentário" required></textarea>
     <div class="flex justify-center space-x-4 mt-4">
