@@ -71,23 +71,32 @@
   
   
   
-    <!-- Menu Pop-up (oculto inicialmente) -->
-    <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
-      <ul>
-        <li><a href="index.php" class="block p-4">Home</a></li>
-        <li><a href="sobrenos.html" class="block p-4">Sobre</a></li>
-        <li><a href="maisservicos.html" class="block p-4">Mais Serviços</a></li>
-        <li><a href="index.php#contact" class="block p-4">Contato</a></li>
-        <button id="theme-toggle-mobile" class="bg-transparent text-black p-2 rounded-lg">
-          <i id="theme-icon-mobile" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
-        </button>
-      </ul>
-    </div>
+  <!-- Menu Pop-up (oculto inicialmente) -->
+  <div id="mobile-menu" class="fixed top-0 left-0 w-3/4 h-full bg-blue-600 text-white p-4 transform -translate-x-full transition-transform duration-300 ease-in-out">
+    <ul>
+    <input type="checkbox" id="hamburger-checkbox" class="hidden" />
+    <label for="hamburger-checkbox" class="lg:hidden text-3xl text-black cursor-pointer block p-4">
+      <i class="fa fa-arrow-left"></i>
+    </label>
+      <li><a href="index.php" class="block p-4">Home</a></li>
+      <li><a href="sobrenos.html" class="block p-4">Sobre</a></li>
+      <li><a href="maisservicos.html" class="block p-4">Mais Serviços</a></li>
+      <li><a href="index.php#contact" class="block p-4">Contato</a></li>
+      <button id="theme-toggle-mobile" class="bg-transparent text-black p-2 rounded-lg">
+        <i id="theme-icon-mobile" class="fas fa-moon text-2xl block p-4"></i> <!-- Ícone padrão (lua) -->
+      </button>
+    </ul>
+  </div>
   
-  <!-- WhatsApp Button -->
-  <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
+   <!-- WhatsApp Button -->
+   <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
+     <!-- Balão de fala -->
+  <div class="absolute bottom-16 right-0 bg-white text-black p-2 rounded-lg shadow-lg w-max flex items-center mb-3">
+    <span class="text-sm">Posso ajudar?</span>
+  </div>
   </a>
+
 
   <!-- About Section -->
   <section id="testimonials" class="py-16 hero-text">
@@ -107,7 +116,7 @@
         </div>
 
          <!-- Imagem -->
-         <div class="text-center md:text-left">
+         <div class="text-center md:text-left mt-5">
           <img src="img/sobrenos2.jpg" alt="Imagem sobre a empresa" class="w-3/4 md:w-1/2 h-auto rounded-lg shadow-lg mx-auto">
         </div>
       </div>
