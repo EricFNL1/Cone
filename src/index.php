@@ -116,9 +116,9 @@
   <a href="https://wa.me/+5519981690796" target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition duration-300 flex items-center justify-center z-50 w-16 h-16 hero-text">
     <i class="fab fa-whatsapp text-3xl"></i>
      <!-- Balão de fala -->
-  <div class="absolute bottom-16 right-0 bg-white text-black p-2 rounded-lg shadow-lg w-max flex items-center mb-3">
+     <div id="whatsapp-balloon" class="absolute bottom-16 right-0 bg-white text-black p-2 rounded-lg shadow-lg w-max flex items-center mb-3">
     <span class="text-sm">Posso ajudar?</span>
-  </div>
+    </div>
   </a>
 
   <!-- Services Section -->
@@ -237,7 +237,7 @@
 
 <!-- Carrossel de Comentários -->
 <div id="commentCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-  <div class="carousel-inner" id="carousel-comments">
+  <div class="carousel-inner carousel-comments" id="carousel-comments">
     <?php
     include('config.php');
 
@@ -281,7 +281,7 @@
     }
     ?>
   </div>
-
+</div>
 <!-- Botão para exibir o formulário de comentário -->
 <div class="text-center mb-8 mt-5">
   <button id="show-form-btn" class="bg-gray-800 text-white px-4 py-2 rounded hover:text-primary">
@@ -319,18 +319,22 @@
   </form>
 </section>
 
-  <!-- Footer Section -->
+<section id="raindrops" class="raindrops mt-5" style="height: 50px; overflow: hidden; position: relative;">
+  <canvas id="raincanvas" height="50" width="1920" style="position: absolute; top: 0px; left: 0px;"></canvas>
+</section>
+
+
 <footer class="bg-black text-white py-8">
   <div class="container mx-auto text-center">
       <div class="mb-4">
-          <p class="text-lg">Atendimento</p>
+          <p class="text-lg">Entre em Contato</p>
           <p class="text-sm">Email: contato@celetrica.com.br | Telefone: (19) 99999-9999</p>
       </div>
       
       <!-- Redes Sociais -->
       <div class="space-x-4">
-          <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400  text-3xl"><i class="fab fa-whatsapp-square"></i></a>
-          <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600  text-3xl"><i class="fab fa-instagram-square"></i></a>
+        <a href="https://wa.me/+5519981690796" target="_blank" class="hover:text-green-400  text-3xl"><i class="fab fa-whatsapp-square"></i></a>
+        <a href="https://www.instagram.com/essencial_eletrica/" target="_blank" class="hover:text-pink-600  text-3xl"><i class="fab fa-instagram-square"></i></a>
       </div>
       
       <!-- Copyright -->
@@ -340,8 +344,137 @@
   </div>
 </footer>
 
+
+
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+  // Configurações do efeito
+  const raindropsOptions = {
+    waveLength: 180,    // Quantidade de segmentos da onda
+    canvasWidth: 1865,  // Largura fixa do canvas (ajustada pelo HTML)
+    canvasHeight: 50,   // Altura do canvas (ajustada pelo HTML)
+    color: '#000',      // Cor das ondas (preto claro)
+    frequency: 3,       // Frequência das ondas
+    waveHeight: 40,     // Altura das ondas
+    density: 0.02,      // Densidade para ripples mais curtos
+    rippleSpeed: 0.15,  // Velocidade das ondulações
+  };
+
+  class Spring {
+    constructor() {
+      this.p = 0; // Posição
+      this.v = 0; // Velocidade
+    }
+
+    update(density, rippleSpeed) {
+      this.v += -rippleSpeed * this.p - density * this.v;
+      this.p += this.v;
+    }
+  }
+
+  class Raindrops {
+    constructor(canvasId, options) {
+      this.canvas = document.getElementById(canvasId);
+      this.ctx = this.canvas.getContext('2d');
+      this.options = options;
+      this.springs = [];
+      this.initSprings();
+      this.startAnimation();
+    }
+
+    // Inicializa as molas (pontos da onda)
+    initSprings() {
+      for (let i = 0; i < this.options.waveLength; i++) {
+        this.springs.push(new Spring());
+      }
+    }
+
+    // Atualiza as molas e propaga as ondas
+    updateSprings(spread) {
+      for (let spring of this.springs) {
+        spring.update(this.options.density, this.options.rippleSpeed);
+      }
+
+      const leftDeltas = [];
+      const rightDeltas = [];
+
+      for (let t = 0; t < 8; t++) {
+        for (let i = 0; i < this.options.waveLength; i++) {
+          if (i > 0) {
+            leftDeltas[i] = spread * (this.springs[i].p - this.springs[i - 1].p);
+            this.springs[i - 1].v += leftDeltas[i];
+          }
+          if (i < this.options.waveLength - 1) {
+            rightDeltas[i] = spread * (this.springs[i].p - this.springs[i + 1].p);
+            this.springs[i + 1].v += rightDeltas[i];
+          }
+        }
+
+        for (let i = 0; i < this.options.waveLength; i++) {
+          if (i > 0) this.springs[i - 1].p += leftDeltas[i];
+          if (i < this.options.waveLength - 1) this.springs[i + 1].p += rightDeltas[i];
+        }
+      }
+    }
+
+    // Desenha as ondas no canvas
+    renderWaves() {
+      this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+      this.ctx.beginPath();
+      this.ctx.moveTo(0, this.canvas.height);
+
+      const segmentWidth = this.canvas.width / this.options.waveLength;
+      for (let i = 0; i < this.options.waveLength; i++) {
+        this.ctx.lineTo(i * segmentWidth, (this.canvas.height / 2) + this.springs[i].p);
+      }
+
+      this.ctx.lineTo(this.canvas.width, this.canvas.height);
+      this.ctx.fillStyle = this.options.color;
+      this.ctx.fill();
+    }
+
+    // Inicia o loop de animação
+    startAnimation() {
+      const animate = () => {
+        if (Math.random() * 100 < this.options.frequency) {
+          const randomSpring = Math.floor(Math.random() * this.options.waveLength);
+          this.springs[randomSpring].p = this.options.waveHeight;
+        }
+        this.updateSprings(0.1);
+        this.renderWaves();
+        requestAnimationFrame(animate);
+      };
+      animate();
+    }
+  }
+
+  // Inicializar o efeito
+  new Raindrops('raincanvas', raindropsOptions);
+</script>
+
+
+
+  <script>
+    // Aguardar o carregamento da página
+    document.addEventListener("DOMContentLoaded", function() {
+    // Definir o tempo que o balão ficará visível (5 segundos)
+    setTimeout(function() {
+      // Encontrar o balão pelo id e aplicar a transição de fade-out
+      var balloon = document.getElementById("whatsapp-balloon");
+      
+      // Definindo opacidade para 0 para criar o efeito de desaparecimento
+      balloon.style.opacity = 0;
+
+      // Após a transição, esconder o elemento (evitar o espaço ocupado)
+      setTimeout(function() {
+        balloon.style.display = "none";
+      }, 1000); // Espera 1 segundo (tempo da transição)
+    }, 5000); // 5000ms = 5 segundos
+  });
+</script>
+
 
   <!-- Animação para ocultar o botão "Escrever Comentário" -->
 <script>
@@ -521,6 +654,9 @@ document.getElementById("comment-form").addEventListener("submit", function(even
 });
 
 </script>
+
+
+
 
 </body>
 </html>

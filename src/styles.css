@@ -193,3 +193,18 @@ html {
   border-style: solid;
   border-color: transparent transparent #ffffff transparent;
 }
+
+
+@media (min-width: 1024px) {
+  .carousel-comments .row {
+    gap: 1rem; /* Ajuste o valor conforme necessário */
+  }
+}
+
+#whatsapp-balloon {
+  transition: opacity 1s ease-out; /* Transição suave para opacidade */
+}
+
+
+
+
