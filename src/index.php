@@ -310,7 +310,7 @@
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
 <section id="contact" class="bg-accent container">
-  <h2 class="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
+  <h2 class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
@@ -622,8 +622,8 @@ function verificarComentario(comentario) {
         'caralho', 'porra', 'merda', 'foda-se', 'cu', 'buceta', 'viado',
         'puto', 'desgraçado', 'imbecil', 'filha da puta', 'otário', 'arrombado',
         'cuzão', 'porra louca', 'piranha', 'safada', 'vadia', 'escroto', 'filha da puta',
-        'fuder', 'cacete', 'cu de rato', 'merdinha', 'bosta', 'palhaço', 'retardado', 'cagar',
-        'bucetuda', 'maldito'
+        'fuder', 'cacete', 'viadinho', 'merdinha', 'bosta', 'palhaço', 'retardado', 'cagar',
+        'bucetuda', 'maldito', 'lixo', 'pinto', 'pau', 'vsf', 'fdc','fdp', 'viado', 'corno'
     ];
 
     // Verifica se o comentário contém alguma palavra proibida
