@@ -263,3 +263,22 @@ html {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+#backToTopBtn {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  background-color: #252b25;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: none; /* Inicialmente oculto */
+  transition: background-color 0.3s;
+  z-index: 100;
+  border-radius: 20%;
+}
+
+#backToTopBtn:hover {
+  background-color: #404940;
+}
