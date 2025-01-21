@@ -55,7 +55,7 @@
 
     <!-- Botão de trocar de tema (Visível apenas em telas grandes) -->
     <button id="theme-toggle" class="bg-transparent text-black rounded-lg hidden lg:block ml-auto">
-      <i id="theme-icon" class="fas fa-moon text-1xl"></i>
+      <i id="theme-icon" class="fas fa-moon text-2xl"></i>
     </button>
   </div>
 </header>
@@ -360,6 +360,7 @@
     waveHeight: 40,     // Altura das ondas
     density: 0.02,      // Densidade para ripples mais curtos
     rippleSpeed: 0.15,  // Velocidade das ondulações
+    maxFPS: 60,
   };
 
   class Spring {
@@ -435,9 +436,18 @@
       this.ctx.fill();
     }
 
-    // Inicia o loop de animação
     startAnimation() {
-      const animate = () => {
+      const animate = (timestamp) => {
+        // Controle de FPS
+        const deltaTime = timestamp - this.lastFrameTime;
+        const interval = 1000 / this.options.maxFPS;
+        if (deltaTime < interval) {
+          requestAnimationFrame(animate);
+          return;
+        }
+        this.lastFrameTime = timestamp;
+
+        // Atualiza e renderiza as ondas
         if (Math.random() * 100 < this.options.frequency) {
           const randomSpring = Math.floor(Math.random() * this.options.waveLength);
           this.springs[randomSpring].p = this.options.waveHeight;
@@ -446,9 +456,10 @@
         this.renderWaves();
         requestAnimationFrame(animate);
       };
-      animate();
+      requestAnimationFrame(animate);
     }
   }
+
 
   // Inicializar o efeito
   new Raindrops('raincanvas', raindropsOptions);
