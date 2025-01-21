@@ -133,6 +133,12 @@
     </div>
   </a>
 
+  <!-- Botão para voltar ao topo -->
+<button id="backToTopBtn" class="fixed bottom-6 left-6 bg-blue-500 text-white p-3 shadow-lg hover:bg-blue-600 transition duration-300 text-2xl" style="display: none;">
+    ↑
+</button>
+
+
   <!-- Services Section -->
   <section id="services" class="py-16 hero-text">
   <div class="container mx-auto">
@@ -486,7 +492,28 @@
   new Raindrops('raincanvas', raindropsOptions);
 </script>
 
+<script>
+  // Obtém o botão
+var backToTopBtn = document.getElementById("backToTopBtn");
 
+// Quando o usuário rolar para baixo 20px a partir do topo, mostre o botão
+window.onscroll = function() {
+    if (document.body.scrollTop > 1500 || document.documentElement.scrollTop > 1500) {
+        backToTopBtn.style.display = "block";
+    } else {
+        backToTopBtn.style.display = "none";
+    }
+};
+
+// Quando o usuário clicar no botão, rolar para o topo da página
+backToTopBtn.addEventListener("click", function() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth" // Suaviza a rolagem
+    });
+});
+
+</script>
 
   <script>
     // Aguardar o carregamento da página
