@@ -27,6 +27,18 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-background text-white font-sans">
+
+<!-- Tela de Carregamento -->
+<div id="loading" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center">
+  <div class="loader">
+    <div class="circle">
+      <!-- Ícone de raio dentro do círculo -->
+      <i class="fas fa-bolt"></i>
+    </div>
+  </div>
+</div>
+
+
   <!-- Header -->
   <header class="bg-warning text-black top-0 z-50 shadow-md">
   <div class="container mx-auto flex justify-between items-center p-4">
@@ -55,7 +67,7 @@
 
     <!-- Botão de trocar de tema (Visível apenas em telas grandes) -->
     <button id="theme-toggle" class="bg-transparent text-black rounded-lg hidden lg:block ml-auto">
-      <i id="theme-icon" class="fas fa-moon text-1xl"></i>
+      <i id="theme-icon" class="fas fa-moon text-2xl"></i>
     </button>
   </div>
 </header>
@@ -310,7 +322,7 @@
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
 <section id="contact" class="bg-accent container">
-  <h2 class="text-3xl font-bold text-center mb-8">Entre em Contato</h2>
+  <h2 class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
@@ -346,8 +358,17 @@
 
 
 
+
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Quando a página for completamente carregada, ocultar o loading
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loading');
+      loadingScreen.style.display = 'none';  // Esconde a tela de carregamento
+    });
+  </script>
 
   <script>
   // Configurações do efeito
@@ -360,6 +381,7 @@
     waveHeight: 40,     // Altura das ondas
     density: 0.02,      // Densidade para ripples mais curtos
     rippleSpeed: 0.15,  // Velocidade das ondulações
+    maxFPS: 60,
   };
 
   class Spring {
@@ -435,9 +457,18 @@
       this.ctx.fill();
     }
 
-    // Inicia o loop de animação
     startAnimation() {
-      const animate = () => {
+      const animate = (timestamp) => {
+        // Controle de FPS
+        const deltaTime = timestamp - this.lastFrameTime;
+        const interval = 1000 / this.options.maxFPS;
+        if (deltaTime < interval) {
+          requestAnimationFrame(animate);
+          return;
+        }
+        this.lastFrameTime = timestamp;
+
+        // Atualiza e renderiza as ondas
         if (Math.random() * 100 < this.options.frequency) {
           const randomSpring = Math.floor(Math.random() * this.options.waveLength);
           this.springs[randomSpring].p = this.options.waveHeight;
@@ -446,9 +477,10 @@
         this.renderWaves();
         requestAnimationFrame(animate);
       };
-      animate();
+      requestAnimationFrame(animate);
     }
   }
+
 
   // Inicializar o efeito
   new Raindrops('raincanvas', raindropsOptions);
@@ -611,8 +643,8 @@ function verificarComentario(comentario) {
         'caralho', 'porra', 'merda', 'foda-se', 'cu', 'buceta', 'viado',
         'puto', 'desgraçado', 'imbecil', 'filha da puta', 'otário', 'arrombado',
         'cuzão', 'porra louca', 'piranha', 'safada', 'vadia', 'escroto', 'filha da puta',
-        'fuder', 'cacete', 'cu de rato', 'merdinha', 'bosta', 'palhaço', 'retardado', 'cagar',
-        'bucetuda', 'maldito'
+        'fuder', 'cacete', 'viadinho', 'merdinha', 'bosta', 'palhaço', 'retardado', 'cagar',
+        'bucetuda', 'maldito', 'lixo', 'pinto', 'pau', 'vsf', 'fdc','fdp', 'viado', 'corno'
     ];
 
     // Verifica se o comentário contém alguma palavra proibida
