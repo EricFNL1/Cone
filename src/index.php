@@ -27,6 +27,18 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-background text-white font-sans">
+
+<!-- Tela de Carregamento -->
+<div id="loading" class="fixed top-0 left-0 w-full h-full bg-black bg-opacity-50 z-50 flex items-center justify-center">
+  <div class="loader">
+    <div class="circle">
+      <!-- Ícone de raio dentro do círculo -->
+      <i class="fas fa-bolt"></i>
+    </div>
+  </div>
+</div>
+
+
   <!-- Header -->
   <header class="bg-warning text-black top-0 z-50 shadow-md">
   <div class="container mx-auto flex justify-between items-center p-4">
@@ -346,8 +358,17 @@
 
 
 
+
   <!-- Carregar o script do Bootstrap para dropdowns -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Quando a página for completamente carregada, ocultar o loading
+    window.addEventListener('load', function() {
+      const loadingScreen = document.getElementById('loading');
+      loadingScreen.style.display = 'none';  // Esconde a tela de carregamento
+    });
+  </script>
 
   <script>
   // Configurações do efeito
