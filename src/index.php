@@ -332,8 +332,8 @@
 </section>
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
-<section id="contact" class="bg-accent container">
-  <h2 class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
+<section id="contact" class="container p-4">
+  <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
