@@ -32,12 +32,21 @@ function testarInsercao($conn) {
     $nome = "Teste";
     $comentario = "Comentário de teste";
     
+    // Inserção no banco de dados
     $sql = "INSERT INTO comentarios (nome, comentario) VALUES ('$nome', '$comentario')";
 
     if ($conn->query($sql) === TRUE) {
         echo "Inserção bem-sucedida de dados na tabela de comentários!<br>";
     } else {
         echo "Erro na inserção: " . $conn->error . "<br>";
+    }
+
+    // Excluir o comentário logo após a inserção
+    $deleteSql = "DELETE FROM comentarios WHERE nome = '$nome' AND comentario = '$comentario'";
+    if ($conn->query($deleteSql) === TRUE) {
+        echo "Comentário excluído após o teste!<br>";
+    } else {
+        echo "Erro na exclusão: " . $conn->error . "<br>";
     }
 }
 
