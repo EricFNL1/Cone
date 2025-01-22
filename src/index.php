@@ -331,6 +331,7 @@
 </div>
 </section>
 
+<div class="bg-accent">
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
 <section id="contact" class="container p-4">
   <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
@@ -345,7 +346,7 @@
 <section id="raindrops" class="raindrops mt-5" style="height: 50px; overflow: hidden; position: relative;">
   <canvas id="raincanvas" height="50" width="1920" style="position: absolute; top: 0px; left: 0px;"></canvas>
 </section>
-
+</div>
 
 <footer class="bg-black text-white py-8">
   <div class="container mx-auto text-center">
