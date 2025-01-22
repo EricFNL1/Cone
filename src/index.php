@@ -256,46 +256,51 @@
 <!-- Carrossel de Comentários -->
 <div id="commentCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
   <div class="carousel-inner carousel-comments" id="carousel-comments">
-    <?php
+  <?php
     include('config.php');
 
-    // Busca os comentários no banco de dados
-    $result = $conn->query("SELECT * FROM comentarios");
+    // Busca os comentários no banco de dados, ordenando os mais recentes primeiro
+    $result = $conn->query("SELECT * FROM comentarios ORDER BY data_criacao DESC");
 
-    $is_first_slide = true;
-    $comment_count = 0;
-    $comments_in_slide = ""; // Variável para armazenar os comentários de um slide
+    if ($result->num_rows > 0) {
+        $is_first_slide = true;
+        $comment_count = 0;
+        $comments_in_slide = ""; // Variável para armazenar os comentários de um slide
 
-    while ($row = $result->fetch_assoc()) {
-        // Adiciona o comentário ao slide
-        $comments_in_slide .= "
-            <div class='col-md-6 text-center mb-4'>
-                <div class='bg-white p-4 rounded-lg shadow-md'>
-                    <p class='text-sm text-gray-500'>" . $row['comentario'] . "</p>
-                    <p class='text-sm text-gray-500'>— " . $row['nome'] . "</p>
+        // Loop para percorrer todos os comentários
+        while ($row = $result->fetch_assoc()) {
+            // Adiciona o comentário ao slide
+            $comments_in_slide .= "
+                <div class='col-md-6 text-center mb-4'>
+                    <div class='bg-white p-4 rounded-lg shadow-md'>
+                        <p class='text-sm text-gray-500'>" . $row['comentario'] . "</p>
+                        <p class='text-sm text-gray-500'>— " . $row['nome'] . "</p>
+                    </div>
                 </div>
-            </div>
-        ";
+            ";
 
-        $comment_count++;
+            $comment_count++;
 
-        // Quando 2 comentários forem adicionados, cria um slide novo
-        if ($comment_count % 2 == 0) {
-            echo $is_first_slide ? "<div class='carousel-item active'>" : "<div class='carousel-item'>";
+            // Quando 1 comentário for adicionado, cria um slide novo
+            if ($comment_count % 1 == 0) {
+                echo $is_first_slide ? "<div class='carousel-item active'>" : "<div class='carousel-item'>";
+                echo "<div class='row justify-content-center'>";
+                echo $comments_in_slide;
+                echo "</div></div>";
+                $is_first_slide = false; // Depois do primeiro slide, ele não é mais ativo por padrão
+                $comments_in_slide = ""; // Resetamos a variável para o próximo slide
+            }
+        }
+
+        // Se restar um comentário, colocamos ele em um slide extra
+        if ($comments_in_slide != "") {
+            echo "<div class='carousel-item'>";
             echo "<div class='row justify-content-center'>";
             echo $comments_in_slide;
             echo "</div></div>";
-            $is_first_slide = false; // Depois do primeiro slide, ele não é mais ativo por padrão
-            $comments_in_slide = ""; // Resetamos a variável para o próximo slide
         }
-    }
-
-    // Se restar um comentário, colocamos ele em um slide extra
-    if ($comments_in_slide != "") {
-        echo "<div class='carousel-item'>";
-        echo "<div class='row justify-content-center'>";
-        echo $comments_in_slide;
-        echo "</div></div>";
+    } else {
+        echo "<p>Nenhum comentário encontrado.</p>";
     }
     ?>
   </div>
@@ -327,8 +332,8 @@
 </section>
 
 <!-- Contact Section (sem alterações, voltando ao formato anterior) -->
-<section id="contact" class="bg-accent container">
-  <h2 class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
+<section id="contact" class="container p-4">
+  <h2 id="trocar" class="text-3xl font-bold text-center mb-8">Contato por E-mail</h2>
   <form action="send_email.php" method="POST" class="max-w-lg mx-auto space-y-4">
     <input type="text" name="nome" placeholder="Seu Nome" class="w-full px-4 py-2 border rounded text-black" required />
     <input type="email" name="email" placeholder="Seu Email" class="w-full px-4 py-2 border rounded text-black" required />
