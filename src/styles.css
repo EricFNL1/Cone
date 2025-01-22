@@ -282,3 +282,12 @@ html {
 #backToTopBtn:hover {
   background-color: #404940;
 }
+
+@media (max-width: 1024px){
+  #celular{
+    font-size: 14px;
+  }
+  #titulocelular{
+    font-size: 18px;
+  }
+}

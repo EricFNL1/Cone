@@ -117,8 +117,8 @@
   <!-- Texto sobre Eletricista Profissional -->
   <div class="absolute inset-0 flex items-center justify-center text-center text-white z-10">
     <div class="max-w-2xl mx-auto">
-      <h2 class="text-3xl font-semibold">Eletricista Profissional à Sua Disposição</h2>
-      <p class="text-lg mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa. Seja para instalações ou manutenções, nossa equipe é altamente qualificada para atender às suas necessidades com eficiência e segurança.</p>
+      <h2 class="text-3xl font-semibold">Eletricista Profissional</h2>
+      <p id="celular" class="text-lg mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa. Seja para instalações ou manutenções, nossa equipe é altamente qualificada para atender às suas necessidades com eficiência e segurança.</p>
     </div>
   </div>
 </section>
@@ -232,8 +232,8 @@
      <!-- Hero Section -->
      <section class="bg-cover bg-center bg-no-repeat py-16 flex items-center justify-center mt-5" style="background-image: url('img/fundofinal.png');">
     <div class="text-center max-w-2xl mx-auto">
-      <h2 class="text-3xl font-semibold text-white">Precisando de um Eletricista de Confiança?</h2>
-      <p class="text-lg text-white mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa.</p>
+      <h2 id="titulocelular" class="text-3xl font-semibold text-white">Precisando de um Eletricista de Confiança?</h2>
+      <p id="celular" class="text-lg text-white mt-4">Oferecemos serviços de alta qualidade para sua casa ou empresa.</p>
       <a href="https://wa.me/+5519981690796"><button class="bg-primary text-white px-4 py-2 mt-4 hover:scale-105 transition-transform duration-300 ease-in-out">Solicitar Orçamento</button></a>
     </div>
   </section>
@@ -242,7 +242,7 @@
   <section id="about" class="bg-warning text-black py-16 hero-text">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold text-center mb-8">Quem somos?</h2>
-      <p class="text-center max-w-2xl mx-auto font-bold">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. <a href="sobrenos.html" class="text-primary"> Para saber mais, clique aqui!</a></p>
+      <p class="text-justify max-w-2xl mx-auto font-bold">Com uma trajetória marcada pela excelência e dedicação, somos uma empresa especializada em serviços elétricos de alta qualidade. Nossa equipe é composta por profissionais altamente qualificados, comprometidos em entregar soluções seguras, eficientes e personalizadas para cada cliente. Para saber mais,  <a href="sobrenos.html" class="text-primary">clique aqui!</a></p>
     </div>
   </section>
 
