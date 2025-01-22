@@ -280,7 +280,7 @@
         $comment_count++;
 
         // Quando 2 comentários forem adicionados, cria um slide novo
-        if ($comment_count % 2 == 0) {
+        if ($comment_count % 1 == 0) {
             echo $is_first_slide ? "<div class='carousel-item active'>" : "<div class='carousel-item'>";
             echo "<div class='row justify-content-center'>";
             echo $comments_in_slide;
